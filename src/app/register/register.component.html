@@ -1,0 +1,99 @@
+<!-- <p-toast key="error"></p-toast>
+<p-toast key="process"></p-toast>
+<p-toast key="success"></p-toast> -->
+<!-- For Form register -->
+<div class="register-container">
+  <!-- For register Heading -->
+  <div class="register-form-section">
+    <div class="register-content-section">
+      <h1 class="register-heading">Register</h1>
+    </div>
+    <form
+      class="register-form"
+      [formGroup]="registerForm"
+      (ngSubmit)="submit()"
+    >
+      <div class="p-grid p-fluid register-userdata">
+        <div class="p-col-12 p-md-4">
+          <span class="p-float-label">
+            <input
+              id="float-input"
+              type="text"
+              pInputText
+              formControlName="name"
+            />
+            <label for="float-input">Name</label>
+          </span>
+        </div>
+        <div class="p-col-12 p-md-4">
+          <span class="p-float-label">
+            <input id="email" type="email" pInputText formControlName="email" />
+            <label for="float-input">Enter Email</label>
+          </span>
+
+          <div
+            *ngIf="submitted && registerForm.controls['email'].errors"
+            class="register-error"
+          >
+            <div *ngIf="registerForm.controls['email'].errors['required']">
+              Email is required.
+            </div>
+            <div *ngIf="registerForm.controls['email'].errors['email']">
+              You must enter correct email.
+            </div>
+          </div>
+        </div>
+
+        <div class="p-col-12 p-md-4">
+          <span class="p-float-label">
+            <input
+              id="float-input"
+              type="password"
+              pInputText
+              formControlName="password"
+            />
+            <label for="float-input">Password</label>
+          </span>
+
+          <!-- <div
+              *ngIf="submitted && registerForm.controls['email'].errors"
+              class="register-error"
+            >
+              <div *ngIf="registerForm && registerForm?.controls['password']?.errors['required']">
+                Password is required.
+              </div>
+            </div> -->
+        </div>
+        <div class="p-col-12 p-md-4">
+          <span class="p-float-label">
+            <input
+              id="float-input"
+              type="password"
+              pInputText
+              formControlName="confirmPassword"
+            />
+            <label for="float-input">Confirm Password</label>
+          </span>
+        </div>
+        <div class="p-col-12 p-md-4">
+          <span class="p-float-label">
+            <input
+              id="float-input"
+              type="address"
+              pInputText
+              formControlName="address"
+            />
+            <label for="float-input">Address</label>
+          </span>
+        </div>
+      </div>
+
+      <div class="p-col-12 p-md-4 register-forgot-password">
+        <a routerLink="/login"> <strong> Login here </strong> </a>
+        <p-button label="Sign up" type="submit"></p-button>
+      </div>
+
+      <div class="p-col-12"></div>
+    </form>
+  </div>
+</div>
