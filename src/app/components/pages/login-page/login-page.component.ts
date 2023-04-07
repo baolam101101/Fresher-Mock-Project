@@ -1,17 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { UserService } from 'src/app/services/user.service';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { ActivatedRoute, Router } from "@angular/router";
+import { UserService } from "src/app/services/user.service";
 
 @Component({
-  selector: 'app-login-page',
-  templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.css'],
-})  
+  selector: "app-login-page",
+  templateUrl: "./login-page.component.html",
+  styleUrls: ["./login-page.component.css"],
+})
 export class LoginPageComponent implements OnInit {
   loginForm!: FormGroup;
   isSubmitted = false;
-  returnUrl = '';
+  returnUrl = "";
   submitted = false;
   user: any;
   constructor(
@@ -23,8 +23,8 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-      email: this.fb.control('', [Validators.required, Validators.email]),
-      password: this.fb.control('', [Validators.required]),
+      email: this.fb.control("", [Validators.required, Validators.email]),
+      password: this.fb.control("", [Validators.required]),
     });
 
     // this.auth.currentUser.subscribe((data) => (this.user = data));
