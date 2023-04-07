@@ -52,6 +52,7 @@ import { DeferModule } from 'primeng/defer';
 import { FileUploadModule } from 'primeng/fileupload';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { RegisterComponent } from './register/register.component';
+import { HeaderComponent } from './components/pages/header/header.component';
 
 const PRIMENG_DEPENDENCIES = [
   ButtonModule,
@@ -98,7 +99,7 @@ const PRIMENG_DEPENDENCIES = [
   SelectButtonModule,
 ];
 @NgModule({
-  declarations: [AppComponent, LoginPageComponent, RegisterComponent],
+  declarations: [AppComponent, LoginPageComponent, RegisterComponent, HeaderComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
