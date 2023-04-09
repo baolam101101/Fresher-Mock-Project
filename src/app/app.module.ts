@@ -52,7 +52,8 @@ import { DeferModule } from 'primeng/defer';
 import { FileUploadModule } from 'primeng/fileupload';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { RegisterComponent } from './register/register.component';
-import { CartPageComponent } from './cart-page/cart-page.component';
+ import { CardPageComponent } from './components/pages/card-page/card-page.component';
+import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 
 const PRIMENG_DEPENDENCIES = [
   ButtonModule,
@@ -99,7 +100,7 @@ const PRIMENG_DEPENDENCIES = [
   SelectButtonModule,
 ];
 @NgModule({
-  declarations: [AppComponent, LoginPageComponent, RegisterComponent, CartPageComponent],
+  declarations: [AppComponent, LoginPageComponent, RegisterComponent, CardPageComponent, CartPageComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
