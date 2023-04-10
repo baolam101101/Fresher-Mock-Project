@@ -4,7 +4,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { LoginPageComponent } from "./components/pages/login-page/login-page.component";
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { LoadingInterceptor } from "./shared/interceptors/loading.interceptor";
 import { AuthInterceptor } from "./auth/auth.interceptor";
@@ -51,7 +51,7 @@ import { BlockUIModule } from "primeng/blockui";
 import { DeferModule } from "primeng/defer";
 import { FileUploadModule } from "primeng/fileupload";
 import { SelectButtonModule } from "primeng/selectbutton";
-import { RegisterComponent } from "./register/register.component";
+import { RegisterComponent } from "./components/pages/register/register.component";
 import { HeaderComponent } from "./components/pages/header/header.component";
 
 const PRIMENG_DEPENDENCIES = [
@@ -111,6 +111,7 @@ const PRIMENG_DEPENDENCIES = [
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
     ...PRIMENG_DEPENDENCIES,
   ],
   exports: [...PRIMENG_DEPENDENCIES],
