@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
-
+import { DataService } from "src/app/services/data.service";
 
 @Component({
   selector: "app-home-page",
@@ -8,7 +8,10 @@ import { Router } from "@angular/router";
   styleUrls: ["./home-page.component.css"],
 })
 export class HomePageComponent {
-  constructor(private router: Router) {}
+  food: any[] = [];
+  constructor(private router: Router, dataService: DataService) {
+    this.food = dataService.getListFoods();
+  }
 
   options = [
     { label: "Log out", value: 0 },
@@ -16,7 +19,7 @@ export class HomePageComponent {
     { label: "Status", value: 2 },
   ];
 
-  selectOption(value:any) {
+  selectOption(value: any) {
     console.log(value);
     if (value === 0) {
       this.router.navigate(["/logout"]);
