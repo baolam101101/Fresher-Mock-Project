@@ -1,13 +1,7 @@
-import { Foods } from "./food";
+import { Food } from "./Food";
 
-export class CartItem {
-  constructor(food: Foods) {
-    this.food = food;
-   // this.price; //javascript code, u can write this method
-  }
-  food: Foods;
-  quantity: number = 1;
-  get Price(): number {
-    return this.food.price * this.quantity;
-  }
+export class CartItem{
+  constructor(public food:Food){ }
+  quantity:number = 1 ;
+  price: number = this.food.price;
 }

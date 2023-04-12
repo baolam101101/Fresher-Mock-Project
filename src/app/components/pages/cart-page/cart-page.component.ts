@@ -1,38 +1,53 @@
-import { Component } from '@angular/core';
-import { FoodService } from 'src/app/services/food.service';
-import { CartItem } from 'src/app/shared/models/CartItem';
+import { Component, OnInit } from "@angular/core";
+import { CartService } from "src/app/services/cart.service";
+import { Cart } from "src/app/shared/models/Cart";
+import { CartItem } from "src/app/shared/models/CartItem";
+import { Food } from "src/app/shared/models/Food";
+import { sample_foods } from "src/data";
 
 @Component({
-  selector: 'app-cart-page',
-  templateUrl: './cart-page.component.html',
-  styleUrls: ['./cart-page.component.css']
+  selector: "app-cart-page",
+  templateUrl: "./cart-page.component.html",
+  styleUrls: ["./cart-page.component.css"],
 })
 export class CartPageComponent implements OnInit {
-  cart!:Cart;
-  constructor(private cartService:CartService, private foodService:FoodService) {
-    let foods = foodService.getAll();
-    cartService.addToCart(foods[1]);
-    cartService.addToCart(foods[3]);
-    cartService.addToCart(foods[5]);
+  cart!: Cart;
 
-    this.setCart();
+  constructor(private cartService: CartService) {
+    this.cartService.getCartObservable().subscribe((cart) => {
+      this.cart = cart;
+    });
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
 
-  }
-  setCart(){
-    this.cart = this.cartService.getCart();
-  }
-  removeFromCart(cartItem:CartItem){
-    this.cartService.removeCart(cartItem.food.id);
-    this.setCart();//instance load data
+  removeFromCart(cartItem: CartItem) {
+    this.cartService.removeFromCart(cartItem.food.id);
   }
 
-  changQuantity(cartItem:CartItem,  quantityInString:string){
+  changeQuantity(cartItem: CartItem, quantityInString: string) {
     const quantity = parseInt(quantityInString);
-    this.cartService.addQuantity(cartItem.food.id, quantity);
-    this.setCart();//instance load data
+    this.cartService.changeQuantity(cartItem.food.id, quantity);
   }
 
+ func(){
+  console.log('s')
+ }
+
+
+  // foods = sample_foods;
+  // selectedFood?: Food;
+
+  // onSelect(food: Food): void {
+  //   this.selectedFood = food;
+  // }
+  
+  foods = sample_foods;
+  selectedFood?: Food;
+
+  onSelect(item: any): void {
+    this.selectedFood = item.food;
+  }
+
+   
 }
