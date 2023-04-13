@@ -1,0 +1,14 @@
+.dropdown{
+float: right;
+}
+
+
+.dropdown-item {
+  cursor: pointer;
+}
+
+.dropdown-menu.isShow {
+  display: block;
+  position: absolute;
+  top: 35px;
+}

@@ -1,12 +1,54 @@
-<!-- <app-search></app-search>
-<app-tags></app-tags>
-<app-not-found
-[visible]="!foods || !foods.length"
-resetLinkText="Reset Search">
-</app-not-found> -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<ul>
+<app-header></app-header>
+
+<div class="head">
+  <div class="pi pi-search custom justify-content-start">
+    <input class="search-control" type="text" placeholder="Search" [(ngModel)]="searchText" #searchbar />
+  </div>
+
+  <div class="custom-button">
+    <!-- <p-button
+      label="FastFood"
+      (click)="filterTag()"
+      styleClass="p-button-raised p-button-text p-button-secondary"
+    ></p-button> -->
+    <p-button label="Lunch" styleClass="p-button-raised p-button-text p-button-secondary"></p-button>
+    <p-button label="Soup" styleClass="p-button-raised p-button-text p-button-secondary"></p-button>
+    <p-button label="SlowFood" styleClass="p-button-raised p-button-text p-button-secondary"></p-button>
+  </div>
+</div>
+
+<div class="main">
+  <div class="card-deck">
+    <div class="card" *ngFor="let food of foods">
+      <img class="card-img-top" [src]="food.imageUrl" alt="Image" style="width: 100%" />
+      <div class="card-body">
+        <p class="card-text">{{ food.name }}</p>
+        <p class="card-text">{{ food.price }}</p>
+        <p class="card-text">{{ food.cookTime }}</p>
+        <p-button label="Add Cart" styleClass="p-button-raised p-button-text p-button-secondary w-100"
+          (click)="addToCart(food)"></p-button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<app-footer></app-footer>
+
+ 
+
+<!-- <ul>
   <li *ngFor="let food of foods">
     <a routerLink="/food/{{food.id}}">
       <img [src]="food.imageUrl" [alt]="food.name" />
@@ -17,7 +59,7 @@ resetLinkText="Reset Search">
         <span class="favorite {{food.favorite?'':'not'}}">
           ❤
         </span>
-       
+
         <div class="product-item-footer">
           <div class="origins">
             <span *ngFor="let origin of food.origins">
@@ -41,6 +83,6 @@ resetLinkText="Reset Search">
 
 
 
-    <button type="button" class="addtocart" (click)="addToCart(food)"> <strong > Add To Cart </strong></button>
+    <button type="button" class="addtocart" (click)="addToCart(food)"> <strong> Add To Cart </strong></button>
 
-</ul>
+</ul> -->
