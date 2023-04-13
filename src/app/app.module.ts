@@ -100,6 +100,7 @@ const PRIMENG_DEPENDENCIES = [
   DeferModule,
   FileUploadModule,
   SelectButtonModule,
+  FormsModule
 ];
 @NgModule({
   declarations: [
