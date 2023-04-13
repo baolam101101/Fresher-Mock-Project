@@ -59,6 +59,7 @@ import { CartPageComponent } from "./components/pages/cart-page/cart-page.compon
 import { DetailComponent } from "./components/pages/detail/detail.component";
 import { FooterComponent } from './components/pages/footer/footer.component';
 import { UserInfoPageComponent } from './components/pages/user-info-page/user-info-page.component';
+import { AboutUsComponent } from './components/pages/about-us/about-us.component';
 
 
 const PRIMENG_DEPENDENCIES = [
@@ -118,6 +119,7 @@ const PRIMENG_DEPENDENCIES = [
     DetailComponent,
     FooterComponent,
     UserInfoPageComponent,
+    AboutUsComponent,
 
   ],
   imports: [

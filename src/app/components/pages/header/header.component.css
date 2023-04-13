@@ -6,3 +6,18 @@
     margin-left: 25px;
     margin-right: 10px;
 }
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+ 
+.navbar-brand:hover{
+  background-color: rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
+   
+}

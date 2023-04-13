@@ -1,0 +1,44 @@
+.menu {
+    justify-content: flex-end;
+  }
+  
+  .cart{
+      margin-left: 25px;
+      margin-right: 10px;
+  }
+
+  .social-link {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+  }
+  
+  .social-link:hover,
+  .social-link:focus {
+    background: #ddd;
+    text-decoration: none;
+    color: #555;
+  }
+  
+  h5{
+    font-size: 1rem;
+  }
+
+  strong{
+    font-size: 100px;
+    color: rgb(200, 12, 200);
+    font-style: italic;
+  }
+  
+  .display-4{
+    font-size:65px ;
+    font-style: bold;
+    font-family: 'Times New Roman', Times, serif;
+  }
