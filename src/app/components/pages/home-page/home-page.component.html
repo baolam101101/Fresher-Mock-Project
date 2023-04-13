@@ -1,0 +1,132 @@
+<header data-cy="headerComponent">
+  <nav class="navbar navbar-expand-lg navbar-light bg-blanchedalmond">
+    <a class="navbar-brand">Food</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse menu" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="home" routerLinkActive="active"></a>
+        </li>
+        <app-dropdown
+          title="Menu"
+          [options]="options"
+          (onSelect)="selectOption($event)"
+          >>
+        </app-dropdown>
+        <li class="nav-item">
+          <a
+            class="nav-link pi pi-shopping-cart cart"
+            style="font-size: 1.5rem"
+            routerLink="shopping-list"
+            routerLinkActive="active"
+          ></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<div class="head">
+  <div class="pi pi-search custom justify-content-start">
+    <input
+      class="search-control"
+      type="text"
+      placeholder="Search"
+      [(ngModel)]="searchText"
+      #searchbar
+    />
+  </div>
+
+  <div id="custom-button">
+    <!-- <p-button
+      label="FastFood"
+      (click)="filterTag()"
+      styleClass="p-button-raised p-button-text p-button-secondary"
+    ></p-button> -->
+    <p-button
+      label="Lunch"
+      styleClass="p-button-raised p-button-text p-button-secondary"
+    ></p-button>
+    <p-button
+      label="Soup"
+      styleClass="p-button-raised p-button-text p-button-secondary"
+    ></p-button>
+    <p-button
+      label="SlowFood"
+      styleClass="p-button-raised p-button-text p-button-secondary"
+    ></p-button>
+  </div>
+</div>
+
+<div class="main">
+  <div class="card-deck">
+    <div class="card" *ngFor="let item of food">
+      <img
+        class="card-img-top"
+        [src]="item.imageUrl"
+        alt="Image"
+        style="width: 100%"
+      />
+      <div class="card-body">
+        <p class="card-text">{{ item.name }}</p>
+        <p class="card-text">Price: {{ item.price }} $</p>
+        <p class="card-text">Cook time: {{ item.cookTime }} mins</p>
+      </div>
+      <p-button
+        label="Add Cart"
+        styleClass="p-button-raised p-button-text p-button-secondary w-100"
+      ></p-button>
+    </div>
+    <!-- <div class="card">
+      <img class="card-img-top" src="" alt="Card image" style="width: 100%" />
+      <div class="card-body">
+        <p class="card-text">Food Name</p>
+        <p class="card-text">Price</p>
+        <p class="card-text">Cook Time</p>
+        <p-button label="Add Cart" styleClass="p-button-raised p-button-text p-button-secondary"></p-button>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="" alt="Card image" style="width: 100%" />
+      <div class="card-body">
+        <p class="card-text">Food Name</p>
+        <p class="card-text">Price</p>
+        <p class="card-text">Cook Time</p>
+        <p-button label="Add Cart" styleClass="p-button-raised p-button-text p-button-secondary"></p-button>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="" alt="Card image" style="width: 100%" />
+      <div class="card-body">
+        <p class="card-text">Food Name</p>
+        <p class="card-text">Price</p>
+        <p class="card-text">Cook Time</p>
+        <p-button label="Add Cart" styleClass="p-button-raised p-button-text p-button-secondary"></p-button>
+      </div>
+    </div> -->
+  </div>
+</div>
+
+<div class="footer">
+  <footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Cart</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Orders</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About us</a></li>
+    </ul>
+    <p class="text-center text-muted foot">&copy; 2023 MOCK PROJECT BY BAODNT, LAM NGU, QUAN VA BAO NGU</p>
+  </footer>
+</div>
+
+<div class="b-example-divider"></div>

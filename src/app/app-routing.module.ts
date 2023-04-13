@@ -6,6 +6,10 @@ const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "login" },
   { path: "login", component: LoginPageComponent },
   { path: "register", component: RegisterComponent },
+<<<<<<< Updated upstream
+=======
+  { path: "home", component: HomePageComponent },
+>>>>>>> Stashed changes
 ];
 
 @NgModule({
