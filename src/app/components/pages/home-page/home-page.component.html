@@ -1,5 +1,5 @@
 <header data-cy="headerComponent">
-  <nav class="navbar navbar-expand-lg navbar-light bg-blanchedalmond">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand">Food</a>
     <button
       class="navbar-toggler"
@@ -25,7 +25,7 @@
         </app-dropdown>
         <li class="nav-item">
           <a
-            class="nav-link pi pi-shopping-cart cart"
+            class="nav-link pi pi-shopping-cart"
             style="font-size: 1.5rem"
             routerLink="shopping-list"
             routerLinkActive="active"
@@ -47,7 +47,7 @@
     />
   </div>
 
-  <div id="custom-button">
+  <div class="custom-button">
     <!-- <p-button
       label="FastFood"
       (click)="filterTag()"
@@ -79,8 +79,8 @@
       />
       <div class="card-body">
         <p class="card-text">{{ item.name }}</p>
-        <p class="card-text">Price: {{ item.price }} $</p>
-        <p class="card-text">Cook time: {{ item.cookTime }} mins</p>
+        <p class="card-text">{{ item.price }}</p>
+        <p class="card-text">{{ item.cookTime }}</p>
       </div>
       <p-button
         label="Add Cart"
@@ -117,7 +117,7 @@
   </div>
 </div>
 
-<div class="footer">
+<!-- <div class="footer">
   <footer class="py-3 my-4">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
@@ -125,8 +125,8 @@
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Orders</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About us</a></li>
     </ul>
-    <p class="text-center text-muted foot">&copy; 2023 MOCK PROJECT BY BAODNT, LAM NGU, QUAN VA BAO NGU</p>
+    <p class="text-center text-muted">&copy; 2023 MOCK PROJECT BY BAODNT, LAM NGU, QUAN VA BAO NGU</p>
   </footer>
 </div>
 
-<div class="b-example-divider"></div>
+<div class="b-example-divider"></div> -->

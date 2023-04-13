@@ -53,6 +53,9 @@ import { FileUploadModule } from "primeng/fileupload";
 import { SelectButtonModule } from "primeng/selectbutton";
 import { RegisterComponent } from "./components/pages/register/register.component";
 import { HeaderComponent } from "./components/pages/header/header.component";
+import { HomePageComponent } from './components/pages/home-page/home-page.component';
+import { DropdownComponent } from './components/pages/dropdown/dropdown.component';
+
 
 const PRIMENG_DEPENDENCIES = [
   ButtonModule,
@@ -104,6 +107,8 @@ const PRIMENG_DEPENDENCIES = [
     LoginPageComponent,
     RegisterComponent,
     HeaderComponent,
+    HomePageComponent,
+    DropdownComponent,
   ],
   imports: [
     BrowserModule,
