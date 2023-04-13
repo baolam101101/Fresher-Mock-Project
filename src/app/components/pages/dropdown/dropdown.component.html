@@ -1,0 +1,27 @@
+<div class="dropdown" [ngClass]="{ show: showOptional }">
+    <button
+      class="btn btn-primary dropdown-toggle"
+      type="button"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+      (click)="showOptional = true"
+    >
+      {{ title }}
+    </button>
+    <div
+      class="dropdown-menu"
+      [ngClass]="{ show: showOptional }"
+      aria-labelledby="dropdownMenuButton"
+      (click)="showOptional = false"
+    >
+      <a
+        *ngFor="let option of options"
+        class="dropdown-item"
+        (click)="onSelect.next(option.value)"
+      >
+        {{ option.label }}</a
+      >
+    </div>
+  </div>
+  
