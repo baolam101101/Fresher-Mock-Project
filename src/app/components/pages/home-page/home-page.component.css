@@ -6,9 +6,7 @@
   padding-left: 10px;
 }
 
-.menu {
-  justify-content: flex-end;
-}
+
 
 .custom {
   border-radius: 20px;
@@ -41,20 +39,9 @@ input {
   padding-bottom: 20px;
 }
 
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-}
 
 .custom-button {
   justify-content: flex-end;
   display: flex;
   padding-left: 50px;
-}
-
-.cart{
-  border: none;
 }

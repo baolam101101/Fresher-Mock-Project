@@ -11,18 +11,14 @@ import { DataService } from "src/app/services/data.service";
   styleUrls: ["./home-page.component.css"],
 })
 export class HomePageComponent implements OnInit{
-  food: Food[] = [];
+  foods: Food[] = [];
   constructor(private router: Router, dataService: DataService,private foodService: FoodService,
     private cartService: CartService,
     activatedRoute: ActivatedRoute,) {
-    this.food = dataService.getListFoods();
+    this.foods = dataService.getListFoods();
   }
   ngOnInit(): void {}
-  options = [
-    { label: "Log out", value: 0 },
-    { label: "User information", value: 1 },
-    { label: "Status", value: 2 },
-  ];
+ 
 
   addToCart(food) {
     // console.log(food);
@@ -30,37 +26,9 @@ export class HomePageComponent implements OnInit{
     this.router.navigateByUrl("/cart-page");
   }
 
-  selectOption(value: any) {
-    console.log(value);
-    if (value === 0) {
-      this.router.navigate(["/logout"]);
-    } else if (value === 1) {
-      this.router.navigate(["/userInformation"]);
-    } else {
-      this.router.navigate(["/order"]);
-    }
-  }
+
 
   searchText = "";
 
 }
-
-  // foods: Food[] = [];
-  // constructor(
-  //   private foodService: FoodService,
-  //   private cartService: CartService,
-  //   activatedRoute: ActivatedRoute,
-  //   private router: Router
-  // ) {
-  //   activatedRoute.params.subscribe((params) => {
-  //     if (params.searchTerm)
-  //       this.foods = this.foodService.getAllFoodsBySearchTerm(
-  //         params.searchTerm
-  //       );
-  //     else if (params.tag)
-  //       this.foods = this.foodService.getAllFoodsByTag(params.tag);
-  //     else this.foods = foodService.getAll();
-  //   });
-  // }
-
   
