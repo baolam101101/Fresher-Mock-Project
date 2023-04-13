@@ -51,8 +51,12 @@ import { BlockUIModule } from 'primeng/blockui';
 import { DeferModule } from 'primeng/defer';
 import { FileUploadModule } from 'primeng/fileupload';
 import { SelectButtonModule } from 'primeng/selectbutton';
-import { RegisterComponent } from './register/register.component';
 import { HeaderComponent } from './components/pages/header/header.component';
+import { RegisterComponent } from './components/pages/register/register.component';
+import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
+import { HomePageComponent } from './components/pages/home-page/home-page.component';
+import { DetailComponent } from './components/pages/detail/detail.component';
+import { FormsModule } from "@angular/forms";
 
 const PRIMENG_DEPENDENCIES = [
   ButtonModule,
@@ -97,9 +101,10 @@ const PRIMENG_DEPENDENCIES = [
   DeferModule,
   FileUploadModule,
   SelectButtonModule,
+  FormsModule
 ];
 @NgModule({
-  declarations: [AppComponent, LoginPageComponent, RegisterComponent, HeaderComponent],
+  declarations: [AppComponent, LoginPageComponent, RegisterComponent, CartPageComponent, HomePageComponent, DetailComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

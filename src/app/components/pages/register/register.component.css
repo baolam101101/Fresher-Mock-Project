@@ -1,7 +1,4 @@
-:host ::ng-deep {
- 
-  
-}
+:host ::ng-deep {}
 
 :host ::ng-deep .p-button {
   width: 100%;
@@ -17,7 +14,7 @@
 }
 
 .register-container {
-  background-image: url("../../assets/images/login/loginBg.png");
+  background-image: url("../../../../assets/images/login/loginBg.png");
   background-color: #cccccc;
   background-position: center;
   background-repeat: no-repeat;
