@@ -5,11 +5,7 @@ import { RegisterComponent } from "./components/pages/register/register.componen
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "login" },
   { path: "login", component: LoginPageComponent },
-  { path: "register", component: RegisterComponent },
-<<<<<<< Updated upstream
-=======
-  { path: "home", component: HomePageComponent },
->>>>>>> Stashed changes
+  { path: "register", component: RegisterComponent }
 ];
 
 @NgModule({
