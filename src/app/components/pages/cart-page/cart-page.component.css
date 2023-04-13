@@ -130,6 +130,18 @@ li .remove-button:hover {
   justify-self: center;
 }
 
+.button-add-more{
+  padding: 1rem;
+  color: white;
+  background: #4375ff;
+  display: block;
+  width: 30%;
+  border-radius: 1rem;
+  text-align: center;
+  opacity: 0.7;
+  justify-self: center;
+}
+
 .checkout a:hover {
   opacity: 1;
   cursor: pointer;
