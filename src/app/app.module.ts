@@ -55,6 +55,10 @@ import { RegisterComponent } from "./components/pages/register/register.componen
 import { HeaderComponent } from "./components/pages/header/header.component";
 import { HomePageComponent } from './components/pages/home-page/home-page.component';
 import { DropdownComponent } from './components/pages/dropdown/dropdown.component';
+import { CartPageComponent } from "./components/pages/cart-page/cart-page.component";
+import { DetailComponent } from "./components/pages/detail/detail.component";
+import { FooterComponent } from './components/pages/footer/footer.component';
+import { UserInfoPageComponent } from './components/pages/user-info-page/user-info-page.component';
 
 
 const PRIMENG_DEPENDENCIES = [
@@ -110,6 +114,11 @@ const PRIMENG_DEPENDENCIES = [
     HeaderComponent,
     HomePageComponent,
     DropdownComponent,
+    CartPageComponent,
+    DetailComponent,
+    FooterComponent,
+    UserInfoPageComponent,
+
   ],
   imports: [
     BrowserModule,
