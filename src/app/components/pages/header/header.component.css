@@ -21,3 +21,11 @@ footer {
   border-radius: 5px;
    
 }
+
+button{
+  color: rgb(225, 23, 57);
+}
+
+.btn-primary{
+  background-color: red;
+}

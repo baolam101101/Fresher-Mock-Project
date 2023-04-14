@@ -33,7 +33,7 @@
 
   strong{
     font-size: 100px;
-    color: rgb(200, 12, 200);
+    color: rgb(230, 24, 161);
     font-style: italic;
   }
   
@@ -47,3 +47,35 @@
     background-image: url("https://cdn.pixabay.com/photo/2022/03/23/10/07/fruit-7086847_960_720.png");
     width: 100%;
   } */
+
+  .image{
+    width: 120% !important; 
+  }
+  
+  span{
+    font-size: 70%;
+  }
+
+  #cap{
+    font-size: 200%;
+    color: rgb(234, 17, 140);
+  }
+
+  .tittle2{
+    font-weight: bold;
+    font-size: 350%;
+    
+  }
+
+  .banner{
+    width: 130%;
+  }
+
+  .banner1{
+    height: 290px;
+    width: 570px;
+  }
+  
+  .heart{
+    color: rgb(217, 34, 165);
+  }
