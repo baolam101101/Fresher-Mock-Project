@@ -16,7 +16,7 @@
     <ul>
       <li *ngFor="let cartItem of cart.items" (click)="onSelect(cartItem)">
         <div class="cart-img">
-          <img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name">
+          <img src="cartItem.food.imageUrl" alt="cartItem.food.name">
         </div>
 
         <div>
@@ -32,7 +32,7 @@
         </div>
 
         <div>
-          <select #quantitySelect [value]="cartItem.quantity" (change)="changeQuantity(cartItem, quantitySelect.value)">
+          <select  #quantitySelect [value]="cartItem.quantity" (change)="changeQuantity(cartItem, quantitySelect.value)">
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -59,7 +59,7 @@
       </div>
 
       <div *ngIf="selectedFood">
-        <img [src]="selectedFood.imageUrl" [alt]="selectedFood.imageUrl" width="100%" height="100%"
+        <img src="selectedFood.imageUrl" alt="selectedFood.imageUrl" width="100%" height="100%"
           style="border: 1px solid black;">
       </div>
     </div>
