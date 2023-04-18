@@ -24,3 +24,11 @@ footer {
 header{
   border: 1px solid rgb(31, 61, 255);
 }
+
+button{
+  color: rgb(225, 23, 57);
+}
+
+.btn-primary{
+  background-color: red;
+}
