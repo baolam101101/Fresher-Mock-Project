@@ -1,90 +1,115 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
 <app-header></app-header>
+<div class="row"  *ngIf="!cart || cart.items.length > 0">
+  <div class="col-9">
+    <div style="width: 100%;">
+      <div *ngIf="cart && cart.items.length; ">
+        <ul>
+          <li *ngFor="let cartItem of cart.items" (click)="onSelect(cartItem)">
+            <div class="cart-img">
+              <img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name">
+            </div>
 
-<div *ngIf="!cart || cart.items.length > 0">
-  <div *ngIf="cart && cart.items.length; " class="container">
-    <ul>
-      <li *ngFor="let cartItem of cart.items" (click)="onSelect(cartItem)">
-        <div class="cart-img">
-          <img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name">
-        </div>
+            <div>
+              <a routerLink="/food/{{cartItem.food.id}}">
+                {{cartItem.food.name}}
+              </a>
+            </div>
 
-        <div>
-          <a routerLink="/food/{{cartItem.food.id}}">
-            {{cartItem.food.name}}
-          </a>
-        </div>
+            <div>
+              <a routerLink="/food/{{cartItem.food.id}}">
+                <strong> Time </strong> : {{cartItem.food.cookTime}} mins
+              </a>
+            </div>
 
-        <div>
-          <a routerLink="/food/{{cartItem.food.id}}">
-            <strong> Time </strong> : {{cartItem.food.cookTime}} mins
-          </a>
-        </div>
+            <div>
+              <!-- <input  #quantitySelect [value]="cartItem.quantity" (change)="changeQuantity(cartItem, quantitySelect.value)"> -->
 
-        <div>
-          <select #quantitySelect [value]="cartItem.quantity" (change)="changeQuantity(cartItem, quantitySelect.value)">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
-        </div>
 
-        <div>
-          {{cartItem.price | currency}}
-        </div>
+              <input #quantitySelect type="number" pInputText [(ngModel)]="cartItem.quantity"
+                (change)="changeQuantity(cartItem, quantitySelect.value)"  maxlength="2"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                placeholder="Quantity" required>
 
-        <div>
-          <button class="remove-button" (click)="removeFromCart(cartItem)">
-            Remove
-          </button>
-        </div>
+            </div>
 
-      </li>
-    </ul>
-    <div class="checkout">
-      <div>
-        <h4 style="margin-top: 0px;margin-bottom: 0px;"> Image of food </h4>
-      </div>
+            <div>
+              {{cartItem.price | currency}}
+            </div>
 
-      <div *ngIf="selectedFood">
-        <img [src]="selectedFood.imageUrl" [alt]="selectedFood.imageUrl" width="100%" height="100%"
-          style="border: 1px solid black;">
+            <div>
+              <button class="remove-button" (click)="removeFromCart(cartItem)">
+                Remove
+              </button>
+            </div>
+
+          </li>
+        </ul>
       </div>
     </div>
   </div>
+  <div class="col-3">
+    <section style="position: sticky;top: 20px;">
+      <section>
+        <div class="row">
+          <div class="checkout" style="width:20% ;">
+            <div>
+              <h4 style="margin-top: 0px;margin-bottom: 0px;"> Image of food </h4>
+            </div>
+            <div *ngIf="selectedFood" style="width: 100% ;">
+              <img [src]="selectedFood.imageUrl" [alt]="selectedFood.imageUrl"
+                style="border: 1px solid black; width: 100%; height: auto; box-shadow: 10px;">
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <div class="container">
-    <a class="button-add-more" type="button" routerLink="/home"> Add more foods </a>
-  </div>
+      <section>
+        <div class="row">
+          <div>
+            <div class=" " style="width: 100%; ">
+              <a class="button-add-more" type="button" routerLink="/home" style="width: 100%;"> Add more foods </a>
+            </div>
+          </div>
 
-  <div class="checkout">
-    <div>
-      <div class="foods-count">{{cart.totalCount}}</div>
-      <div class="total-price">{{cart.totalPrice|currency}}</div>
-    </div>
-    <a routerLink="/checkout">Proceed to Checkout</a>
+
+        </div>
+      </section>
+      <section>
+        <div class="row">
+          <div class=" " style="width: 100%; padding: 0px ;">
+            <div class="checkout">
+              <div>
+                <div class="foods-count">{{cart.totalCount}}</div>
+                <div class="total-price">{{cart.totalPrice|currency}}</div>
+              </div>
+              <div>
+                <a routerLink="/checkout">Proceed to Checkout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
   </div>
 </div>
+ 
+
+
+
+ 
 
 
 
 
-
-
-
-
+<!-- <div class="checkout">
+  <div>
+    <div class="foods-count">{{cart.totalCount}}</div>
+    <div class="total-price">{{cart.totalPrice|currency}}</div>
+  </div>
+  <div>
+    <a routerLink="/checkout">Proceed to Checkout</a>
+  </div>
+</div> -->
 <div class="go-home" *ngIf="!cart || cart.items.length === 0">
   <a class="button" type="button" routerLink="/home"> Go to Home </a>
 </div>
