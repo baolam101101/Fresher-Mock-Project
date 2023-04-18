@@ -4,6 +4,7 @@
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
 
+@import "node_modules/bootstrap/dist/css/bootstrap.css";
 *{
   box-sizing: border-box;
 }

@@ -1,9 +1,6 @@
-/* :host ::ng-deep {
- 
-  
-} */
+:host ::ng-deep 
 
-:host ::ng-deep .p-button {
+.p-button {
   width: 100%;
   margin-top: 10px;
   padding-bottom: 10px;
@@ -111,3 +108,4 @@ a {
   margin-top: 0.5rem;
   margin-left: 0.15rem;
 }
+

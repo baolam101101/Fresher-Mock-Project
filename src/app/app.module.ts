@@ -61,7 +61,6 @@ import { FooterComponent } from './components/pages/footer/footer.component';
 import { UserInfoPageComponent } from './components/pages/user-info-page/user-info-page.component';
 import { AboutUsComponent } from './components/pages/about-us/about-us.component';
 
-
 const PRIMENG_DEPENDENCIES = [
   ButtonModule,
   MultiSelectModule,

@@ -1,3 +1,5 @@
+:host ::ng-deep
+
 .search-control {
   flex: 1;
   font-size: 1rem;
