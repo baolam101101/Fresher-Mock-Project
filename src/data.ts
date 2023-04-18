@@ -1,4 +1,6 @@
-export const sample_foods: any[] = [
+import { Tag } from './app/shared/models/Tag';
+import { Food } from './app/shared/models/Food';
+export const sample_foods:  Food[] = [
   {
     id:'1',
     name: 'Pizza Pepperoni',
@@ -41,7 +43,7 @@ export const sample_foods: any[] = [
     origins: ['belgium', 'france'],
     stars: 3.3,
     imageUrl: 'assets/food-4.jpg',
-    tags: ['FastFood', 'Fry'],
+    tags: ['FastFood', 'Fry','Lunch'],
   },
   {
     id:'5',
@@ -52,7 +54,7 @@ export const sample_foods: any[] = [
     origins: ['india', 'asia'],
     stars: 3.0,
     imageUrl: 'assets/food-5.jpg',
-    tags: ['SlowFood', 'Soup'],
+    tags: ['SlowFood', 'Soup', 'Lunch'],
   },
   {
     id:'6',
@@ -67,7 +69,7 @@ export const sample_foods: any[] = [
   },
   {
     id:'7',
-    name: 'Food 7',
+    name: 'Vegetables 1',
     price: 9,
     cookTime: '40-50',
     favorite: false,
@@ -75,9 +77,21 @@ export const sample_foods: any[] = [
     stars: 4.0,
     imageUrl: 'assets/food-6.jpg',
     tags: ['FastFood', 'Pizza', 'Lunch'],
-  },  {
+  },
+  {
     id:'8',
-    name: '  Pizza',
+    name: 'Vegetables 2',
+    price: 9,
+    cookTime: '40-50',
+    favorite: false,
+    origins: ['italy'],
+    stars: 4.0,
+    imageUrl: 'assets/food-6.jpg',
+    tags: ['FastFood', 'Pizza', 'Lunch'],
+  },
+  {
+    id:'9',
+    name: 'Vegetables 3',
     price: 9,
     cookTime: '40-50',
     favorite: false,
