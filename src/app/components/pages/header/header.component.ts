@@ -39,7 +39,7 @@ export class HeaderComponent {
     if (value === 0) {
       this.router.navigate(["/logout"]);
     } else if (value === 1) {
-      this.router.navigate(["/userInformation"]);
+      this.router.navigate(["/infouser"]);
     } else {
       this.router.navigate(["/order"]);
     }

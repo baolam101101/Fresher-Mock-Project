@@ -13,11 +13,12 @@
                 </li>
 
                 <app-dropdown title="Menu" [options]="options" (onSelect)="selectOption($event)">>
+                    
                 </app-dropdown>
                 <li class="nav-item">
                     <a class="nav-link pi pi-shopping-cart cart" style="font-size: 1.5rem" routerLink="/cart-page"
-                        routerLinkActive="/cart-page" > <span style="font-size: smaller; color: red;">({{cart.totalCount}}) </span>  </a>
-                    
+                        routerLinkActive="/cart-page"> <span
+                            style="font-size: smaller; color: red;">({{cart.totalCount}}) </span> </a>
                 </li>
             </ul>
         </div>

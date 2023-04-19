@@ -27,7 +27,6 @@ export class LoginPageComponent implements OnInit {
       password: this.fb.control("", [Validators.required]),
     });
 
-    console.log('cc');
 
     // this.auth.currentUser.subscribe((data) => (this.user = data));
   }

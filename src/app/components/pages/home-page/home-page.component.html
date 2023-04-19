@@ -6,16 +6,7 @@
   </div>
   <app-tags></app-tags>
 
-  <div class="custom-button">
-    <!-- <p-button
-      label="FastFood"
-      (click)="filterTag()"
-      styleClass="p-button-raised p-button-text p-button-secondary"
-    ></p-button> -->
-    <!-- <p-button label="Lunch" styleClass="p-button-raised p-button-text p-button-secondary"></p-button>
-    <p-button label="Soup" styleClass="p-button-raised p-button-text p-button-secondary"></p-button>
-    <p-button label="SlowFood" styleClass="p-button-raised p-button-text p-button-secondary"></p-button> -->
-  </div>
+
 </div>
 
 <div class="main">
@@ -40,9 +31,11 @@
         <a routerLink="/food/{{food.id}}">
           <img [src]="food.imageUrl" [alt]="food.name" />
           <div class="content">
-            <div class="name">
+
+            <div class="fname">
               {{food.name}}
             </div>
+
             <span class="favorite {{food.favorite?'':'not'}}">
               ❤
             </span>
@@ -67,12 +60,8 @@
             </div>
           </div>
         </a>
-        <button type="button" class="addtocart" (click)="addToCart(food)"> <strong> Add To Cart </strong></button>
-
+        <button type="button" class="addtocart" (click)="addToCart(food)"> <strong> <i class="pi pi-cart-plus" style="font-size: 1.5rem" ></i> </strong></button>
     </ul>
-
-
-
   </div>
 </div>
 
