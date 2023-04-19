@@ -63,6 +63,7 @@ import { MapComponent } from './components/pages/map/map.component';
 import { OrderComponent } from './components/pages/order/order.component';
 
 
+
 const PRIMENG_DEPENDENCIES = [
   ButtonModule,
   MultiSelectModule,
@@ -137,6 +138,7 @@ const PRIMENG_DEPENDENCIES = [
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+    
   ],
   bootstrap: [AppComponent],
 })
