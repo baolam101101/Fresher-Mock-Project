@@ -15,7 +15,7 @@ import { Router } from "@angular/router";
 })
 export class CartPageComponent implements OnInit {
   cart!: Cart;
-  options: Dropdown[];
+  // options: Dropdown[];
 
   constructor(
     private cartService: CartService,

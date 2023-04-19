@@ -20,7 +20,7 @@ export class HomePageComponent implements OnInit{
   ngOnInit(): void {}
  
 
-  addToCart(food) {
+  addToCart(food: any) {
     // console.log(food);
     this.cartService.addToCart(food);
     this.router.navigateByUrl("/cart-page");

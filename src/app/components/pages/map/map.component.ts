@@ -22,7 +22,7 @@ L.Marker.prototype.options.icon = iconDefault;
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements AfterViewInit {
-  private map;
+  private map: any;
 
   currentLocation = [];
 
@@ -48,7 +48,7 @@ export class MapComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
-       this.currentLocation = [position.coords.latitude, position.coords.longitude];
+       this.currentLocation = [position.coords.latitude, position.coords.longitude] as any;
        this.initMap();
       });
     }
