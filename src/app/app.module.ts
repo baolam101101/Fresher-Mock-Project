@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { LoadingInterceptor } from "./shared/interceptors/loading.interceptor";
 import { AuthInterceptor } from "./auth/auth.interceptor";
 
+import { AvatarModule } from "primeng/avatar";
 import { ButtonModule } from "primeng/button";
 import { MultiSelectModule } from "primeng/multiselect";
 import { TableModule } from "primeng/table";
@@ -53,9 +54,9 @@ import { FileUploadModule } from "primeng/fileupload";
 import { SelectButtonModule } from "primeng/selectbutton";
 import { RegisterComponent } from "./components/pages/register/register.component";
 import { HeaderComponent } from "./components/pages/header/header.component";
-import { HomePageComponent } from './components/pages/home-page/home-page.component';
-import { DropdownComponent } from './components/pages/dropdown/dropdown.component';
-
+import { HomePageComponent } from "./components/pages/home-page/home-page.component";
+import { DropdownComponent } from "./components/pages/dropdown/dropdown.component";
+import { ProgressSpinnerModule } from "primeng/progressspinner";
 
 const PRIMENG_DEPENDENCIES = [
   ButtonModule,
@@ -100,7 +101,9 @@ const PRIMENG_DEPENDENCIES = [
   DeferModule,
   FileUploadModule,
   SelectButtonModule,
-  FormsModule
+  FormsModule,
+  AvatarModule,
+  ProgressSpinnerModule 
 ];
 @NgModule({
   declarations: [

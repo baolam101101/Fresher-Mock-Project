@@ -27,17 +27,15 @@ export class LoginPageComponent implements OnInit {
       password: this.fb.control("", [Validators.required]),
     });
 
-    console.log('cc');
-
     // this.auth.currentUser.subscribe((data) => (this.user = data));
   }
 
-  // onSubmit() {
-  //   this.submitted = true;
+  onSubmit() {
+    this.submitted = true;
 
-  //   if (this.loginForm.invalid) {
-  //     return;
-  //   }
+    if (this.loginForm.invalid) {
+      return;
+    }
   //   this.messageService.add({
   //     key: 'process',
   //     severity: 'info',
@@ -45,13 +43,14 @@ export class LoginPageComponent implements OnInit {
   //     detail: '...',
   //     life: 4000,
   //   });
-  //   // For call api login & Store token to localStorage
-  //   this.accountServices.login(this.loginForm.value).subscribe({
-  //     next: (res: any) => {
-  //       this.user = res.result;
-  //       this.accountServices.storeToken(res.result.token);
-  //       this.accountServices.storeIdUser(res.result.user.id);
-  //     },
+    // For call api login & Store token to localStorage
+    this.userService.login(this.loginForm.value).subscribe({
+      next: (res: any) => {
+        this.user = res.result;
+        this.router.navigate(["/home"])
+        // this.userService.storeToken(res.result.token);
+        // this.userService.storeIdUser(res.result.user.id);
+      },
   //     complete: () => {
   //       this.messageService.add({
   //         key: 'success',
@@ -78,8 +77,8 @@ export class LoginPageComponent implements OnInit {
   //         life: 2000,
   //       });
   //     },
-  //   });
-  // }
+    });
+  }
 
   // submit(){
   //   this.isSubmitted = true;
@@ -91,5 +90,4 @@ export class LoginPageComponent implements OnInit {
   //      });
   // }
 
-  submit() {}
 }

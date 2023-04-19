@@ -16,7 +16,7 @@
       </small>
     </div>
 
-    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="submit()">
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="p-grid p-fluid login-userdata">
         <div class="p-col-12 p-md-4">
           <span class="p-float-label">
@@ -61,10 +61,12 @@
 
       <div class="p-col-12 p-md-4 login-forgot-password">
         <a routerLink="/register"> <strong> Register account </strong> </a>
-        <p-button routerLink="/home" label="Sign in" type="submit"></p-button>
+        <p-button label="Sign in" type="submit"></p-button>
       </div>
 
       <div class="p-col-12"></div>
     </form>
   </div>
 </div>
+
+
