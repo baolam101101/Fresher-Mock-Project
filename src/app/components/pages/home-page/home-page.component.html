@@ -1,51 +1,10 @@
-<header data-cy="headerComponent">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand">Food</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse menu" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="home" routerLinkActive="active"></a>
-        </li>
-        <app-dropdown
-          title="Menu"
-          [options]="options"
-          (onSelect)="selectOption($event)"
-          >>
-        </app-dropdown>
-        <li class="nav-item">
-          <a
-            class="nav-link pi pi-shopping-cart"
-            style="font-size: 1.5rem"
-            routerLink="shopping-list"
-            routerLinkActive="active"
-          ></a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</header>
-
+<app-header></app-header>
 <div class="head">
   <div class="pi pi-search custom justify-content-start">
-    <input
-      class="search-control"
-      type="text"
-      placeholder="Search"
-      [(ngModel)]="searchText"
-      #searchbar
-    />
+    <input class="search-control" type="text" placeholder="Search" [(ngModel)]="searchText" #searchbar />
+    
   </div>
+  <app-tags></app-tags>
 
   <div class="custom-button">
     <!-- <p-button
@@ -53,80 +12,68 @@
       (click)="filterTag()"
       styleClass="p-button-raised p-button-text p-button-secondary"
     ></p-button> -->
-    <p-button
-      label="Lunch"
-      styleClass="p-button-raised p-button-text p-button-secondary"
-    ></p-button>
-    <p-button
-      label="Soup"
-      styleClass="p-button-raised p-button-text p-button-secondary"
-    ></p-button>
-    <p-button
-      label="SlowFood"
-      styleClass="p-button-raised p-button-text p-button-secondary"
-    ></p-button>
+    <!-- <p-button label="Lunch" styleClass="p-button-raised p-button-text p-button-secondary"></p-button>
+    <p-button label="Soup" styleClass="p-button-raised p-button-text p-button-secondary"></p-button>
+    <p-button label="SlowFood" styleClass="p-button-raised p-button-text p-button-secondary"></p-button> -->
   </div>
 </div>
 
 <div class="main">
-  <div class="card-deck">
-    <div class="card" *ngFor="let item of food">
-      <img
-        class="card-img-top"
-        [src]="item.imageUrl"
-        alt="Image"
-        style="width: 100%"
-      />
-      <div class="card-body">
-        <p class="card-text">{{ item.name }}</p>
-        <p class="card-text">{{ item.price }}</p>
-        <p class="card-text">{{ item.cookTime }}</p>
-      </div>
-      <p-button
-        label="Add Cart"
-        styleClass="p-button-raised p-button-text p-button-secondary w-100"
-      ></p-button>
-    </div>
-    <!-- <div class="card">
-      <img class="card-img-top" src="" alt="Card image" style="width: 100%" />
-      <div class="card-body">
-        <p class="card-text">Food Name</p>
-        <p class="card-text">Price</p>
-        <p class="card-text">Cook Time</p>
-        <p-button label="Add Cart" styleClass="p-button-raised p-button-text p-button-secondary"></p-button>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="" alt="Card image" style="width: 100%" />
-      <div class="card-body">
-        <p class="card-text">Food Name</p>
-        <p class="card-text">Price</p>
-        <p class="card-text">Cook Time</p>
-        <p-button label="Add Cart" styleClass="p-button-raised p-button-text p-button-secondary"></p-button>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="" alt="Card image" style="width: 100%" />
-      <div class="card-body">
-        <p class="card-text">Food Name</p>
-        <p class="card-text">Price</p>
-        <p class="card-text">Cook Time</p>
-        <p-button label="Add Cart" styleClass="p-button-raised p-button-text p-button-secondary"></p-button>
-      </div>
+  <div class="container">
+    <!-- <div class="row ">
+        <div class="card col-12 col-md-4 col-lg-4 m-2" *ngFor="let food of foods">
+          <a routerLink="/food/{{food.id}}"><img class="card-img-top" [src]="food.imageUrl" alt="Image"
+              style="width: 100%">
+          </a>
+          <div class="card-body">
+            <p class="card-text">{{ food.name }}</p>
+            <p class="card-text">{{ food.price }}</p>
+            <p class="card-text">{{ food.cookTime }}</p>
+            <p-button label="Add Cart" styleClass="p-button-raised p-button-text p-button-secondary w-100"
+              (click)="addToCart(food)"></p-button>
+          </div>
+        </div>
     </div> -->
+
+    <ul>
+      <li *ngFor="let food of foods">
+        <a routerLink="/food/{{food.id}}">
+          <img [src]="food.imageUrl" [alt]="food.name" />
+          <div class="content">
+            <div class="name">
+              {{food.name}}
+            </div>
+            <span class="favorite {{food.favorite?'':'not'}}">
+              ❤
+            </span>
+
+            <div class="product-item-footer">
+              <div class="origins">
+                <span *ngFor="let origin of food.origins">
+                  {{origin}}
+                </span>
+              </div>
+
+              <div class="cook-time">
+                <span>🕒</span>
+                {{food.cookTime}}
+              </div>
+            </div>
+
+            <div class="price">
+              <span>
+                {{food.price | currency}}
+              </span>
+            </div>
+          </div>
+        </a>
+        <button type="button" class="addtocart" (click)="addToCart(food)"> <strong> Add To Cart </strong></button>
+
+    </ul>
+
+
+
   </div>
 </div>
 
-<!-- <div class="footer">
-  <footer class="py-3 my-4">
-    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Cart</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Orders</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About us</a></li>
-    </ul>
-    <p class="text-center text-muted">&copy; 2023 MOCK PROJECT BY BAODNT, LAM NGU, QUAN VA BAO NGU</p>
-  </footer>
-</div>
-
-<div class="b-example-divider"></div> -->
+<app-footer></app-footer>

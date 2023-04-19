@@ -54,9 +54,15 @@ import { FileUploadModule } from "primeng/fileupload";
 import { SelectButtonModule } from "primeng/selectbutton";
 import { RegisterComponent } from "./components/pages/register/register.component";
 import { HeaderComponent } from "./components/pages/header/header.component";
-import { HomePageComponent } from "./components/pages/home-page/home-page.component";
-import { DropdownComponent } from "./components/pages/dropdown/dropdown.component";
-import { ProgressSpinnerModule } from "primeng/progressspinner";
+import { HomePageComponent } from './components/pages/home-page/home-page.component';
+import { DropdownComponent } from './components/pages/dropdown/dropdown.component';
+import { CartPageComponent } from "./components/pages/cart-page/cart-page.component";
+import { DetailComponent } from "./components/pages/detail/detail.component";
+import { FooterComponent } from './components/pages/footer/footer.component';
+import { UserInfoPageComponent } from './components/pages/user-info-page/user-info-page.component';
+import { AboutUsComponent } from './components/pages/about-us/about-us.component';
+import { TagsComponent } from "./components/pages/tags/tags.component"; 
+import { TabMenuModule } from 'primeng/tabmenu';
 
 const PRIMENG_DEPENDENCIES = [
   ButtonModule,
@@ -102,8 +108,7 @@ const PRIMENG_DEPENDENCIES = [
   FileUploadModule,
   SelectButtonModule,
   FormsModule,
-  AvatarModule,
-  ProgressSpinnerModule 
+  TabMenuModule
 ];
 @NgModule({
   declarations: [
@@ -113,6 +118,13 @@ const PRIMENG_DEPENDENCIES = [
     HeaderComponent,
     HomePageComponent,
     DropdownComponent,
+    CartPageComponent,
+    DetailComponent,
+    FooterComponent,
+    UserInfoPageComponent,
+    AboutUsComponent,
+    TagsComponent,
+
   ],
   imports: [
     BrowserModule,

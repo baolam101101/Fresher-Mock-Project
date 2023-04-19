@@ -11,8 +11,7 @@
       <small class="login-small-p">
         If you don’t have the account, please contact
         <a href="mailto:FA.HCM@fsoft.com.vn">
-          <strong> FA.HCM@fsoft.com.vn </strong></a
-        >
+          <strong> FA.HCM@fsoft.com.vn </strong></a>
       </small>
     </div>
 
@@ -24,10 +23,7 @@
             <label for="float-input">Enter Email</label>
           </span>
 
-          <div
-            *ngIf="submitted && loginForm.controls['email'].errors"
-            class="login-error"
-          >
+          <div *ngIf="submitted && loginForm.controls['email'].errors" class="login-error">
             <div *ngIf="loginForm.controls['email'].errors['required']">
               Email is required.
             </div>
@@ -39,12 +35,7 @@
 
         <div class="p-col-12 p-md-4">
           <span class="p-float-label">
-            <input
-              id="float-input"
-              type="password"
-              pInputText
-              formControlName="password"
-            />
+            <input id="float-input" type="password" pInputText formControlName="password" />
             <label for="float-input">Password</label>
           </span>
 
@@ -61,12 +52,68 @@
 
       <div class="p-col-12 p-md-4 login-forgot-password">
         <a routerLink="/register"> <strong> Register account </strong> </a>
-        <p-button label="Sign in" type="submit"></p-button>
+        <!-- <p-button  label="Sign in" type="submit"></p-button> -->
+        <p-button routerLink="/home" label="Sign in" type="submit"></p-button>
       </div>
 
       <div class="p-col-12"></div>
     </form>
   </div>
 </div>
-
-
+<!-- =============================
+<style src="D:\Github\Fresher-Mock-Project\src\app\components\pages\user-info-page\user-info-page.component.css">
+</style>
+<div class="login-wrap">
+  <div class="login-html">
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+    <div class="login-form">
+      <div class="sign-in-htm">
+        <div class="group">
+          <label for="user" class="label">Username</label>
+          <input id="user" type="text" class="input">
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Password</label>
+          <input id="pass" type="password" class="input" data-type="password">
+        </div>
+        <div class="group">
+          <input id="check" type="checkbox" class="check" checked>
+          <label for="check"><span class="icon"></span> Keep me Signed in</label>
+        </div>
+        <div class="group">
+          <input type="submit" class="button" value="Sign In">
+        </div>
+        <div class="hr"></div>
+        <div class="foot-lnk">
+          <a href="#forgot">Forgot Password?</a>
+        </div>
+      </div>
+      <div class="sign-up-htm">
+        <div class="group">
+          <label for="user" class="label">Username</label>
+          <input id="user" type="text" class="input">
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Password</label>
+          <input id="pass" type="password" class="input" data-type="password">
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Repeat Password</label>
+          <input id="pass" type="password" class="input" data-type="password">
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Email Address</label>
+          <input id="pass" type="text" class="input">
+        </div>
+        <div class="group">
+          <input type="submit" class="button" value="Sign Up">
+        </div>
+        <div class="hr"></div>
+        <div class="foot-lnk">
+          <label for="tab-1">Already Member?</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
