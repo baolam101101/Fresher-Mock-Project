@@ -7,6 +7,7 @@ import { CartItem } from "src/app/shared/models/CartItem";
 import { Food } from "src/app/shared/models/Food";
 import { sample_foods } from "src/data";
 import { Router } from "@angular/router";
+import { NO_ERRORS_SCHEMA } from "@angular/compiler";
 
 @Component({
   selector: "app-cart-page",
@@ -25,7 +26,19 @@ export class CartPageComponent implements OnInit {
     this.cartService.getCartObservable().subscribe((cart) => {
       this.cart = cart;
     });
+    const form = document.querySelector("form");
+    const quantityInput = document.querySelector('#quantity') as HTMLInputElement;
+    
+    
   }
+
+  //quantity of pruduct
+  // public inputValidator(event: any) {
+  //   const pattern = /^([0-9])$/;
+  //   if (!pattern.test(event.target.value)) {
+  //     event.target.value = event.target.value.replace(/^([0-9])$/, "");
+  //   }
+  // }
 
   ngOnInit(): void {}
 

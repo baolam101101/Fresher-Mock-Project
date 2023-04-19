@@ -9,7 +9,7 @@ export class LoadingService {
   constructor() { }
 
   showLoading(){
-    this.isLoadingSubject.next(true);
+    this.isLoadingSubject.next(true); 
   }
 
   hideLoading(){

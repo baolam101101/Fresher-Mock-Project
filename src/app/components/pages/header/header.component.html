@@ -1,20 +1,24 @@
 <header data-cy="headerComponent">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" type="logo" routerLink="/home">Food</a>
+        <a class="navbar-brand" type="logo" routerLink="/home" style="width: 80px; text-align: center;">Fuud</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse menu" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
                     <a class="nav-link" routerLink="home" routerLinkActive="active"></a>
                 </li>
+
                 <app-dropdown title="Menu" [options]="options" (onSelect)="selectOption($event)">>
+                    
                 </app-dropdown>
                 <li class="nav-item">
-                    <a class="nav-link pi pi-shopping-cart cart" style="font-size: 1.5rem" routerLink="shopping-list"
-                        routerLinkActive="active"></a>
+                    <a class="nav-link pi pi-shopping-cart cart" style="font-size: 1.5rem" routerLink="/cart-page"
+                        routerLinkActive="/cart-page"> <span
+                            style="font-size: smaller; color: red;">({{cart.totalCount}}) </span> </a>
                 </li>
             </ul>
         </div>

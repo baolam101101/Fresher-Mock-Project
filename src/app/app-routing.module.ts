@@ -8,6 +8,7 @@ import { DetailComponent } from "./components/pages/detail/detail.component";
 import { UserInfoPageComponent } from "./components/pages/user-info-page/user-info-page.component";
 import { MapComponent } from "./components/pages/map/map.component";
 
+import { AboutUsComponent } from "./components/pages/about-us/about-us.component";
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "login" },
   { path: "home", component: HomePageComponent }, 
@@ -15,8 +16,11 @@ const routes: Routes = [
   { path: "food/:id", component: DetailComponent },
   { path: "register", component: RegisterComponent },
   { path: "cart-page", component: CartPageComponent },
-  { path : "info-user" , component : UserInfoPageComponent},
   { path: "map", component: MapComponent },
+  { path : "userinfo" , component : UserInfoPageComponent},
+  { path: "aboutus", component: AboutUsComponent},
+  { path: 'tag/:tag', component: HomePageComponent },
+
 ];
 
 @NgModule({

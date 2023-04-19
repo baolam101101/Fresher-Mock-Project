@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { LoadingInterceptor } from "./shared/interceptors/loading.interceptor";
 import { AuthInterceptor } from "./auth/auth.interceptor";
 
+import { AvatarModule } from "primeng/avatar";
 import { ButtonModule } from "primeng/button";
 import { MultiSelectModule } from "primeng/multiselect";
 import { TableModule } from "primeng/table";
@@ -63,6 +64,9 @@ import { MapComponent } from './components/pages/map/map.component';
 import { OrderComponent } from './components/pages/order/order.component';
 
 
+import { AboutUsComponent } from './components/pages/about-us/about-us.component';
+import { TagsComponent } from "./components/pages/tags/tags.component"; 
+import { TabMenuModule } from 'primeng/tabmenu';
 
 const PRIMENG_DEPENDENCIES = [
   ButtonModule,
@@ -107,7 +111,9 @@ const PRIMENG_DEPENDENCIES = [
   DeferModule,
   FileUploadModule,
   SelectButtonModule,
-  FormsModule
+  FormsModule,
+  TabMenuModule,
+  AvatarModule
 ];
 @NgModule({
   declarations: [
@@ -123,6 +129,8 @@ const PRIMENG_DEPENDENCIES = [
     UserInfoPageComponent,
     MapComponent,
     OrderComponent,
+    AboutUsComponent,
+    TagsComponent,
 
   ],
   imports: [

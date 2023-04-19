@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  margin: 1.5rem;
+  /* margin: 1.5rem; */
   margin-top: 0.5rem;
 }
 
@@ -16,6 +16,7 @@ ul {
   list-style: none;
   margin: 0.5rem;
   padding: 0;
+ 
 }
 
 ul li {
@@ -24,8 +25,7 @@ ul li {
   align-items: center;
   flex-wrap: wrap;
   border-bottom: 1px solid #3240ff;
-  padding: 10px;
-  
+  padding: 10px;  
 }
 
 li:visited{
@@ -164,4 +164,7 @@ li .remove-button:hover {
   border-radius: 1rem;
   text-align: center;
   opacity: 0.7;
+}
+a{
+  text-decoration: none;
 }
