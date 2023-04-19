@@ -9,19 +9,28 @@ import { HttpClient } from "@angular/common/http";
   templateUrl: "./user-info-page.component.html",
   styleUrls: ["./user-info-page.component.css"],
 })
-export class UserInfoPageComponent {
-  users: User;
+export class UserInfoPageComponent  implements OnInit {
+  user: User;
   constructor(
     private userService: UserService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private http: HttpClient
   ) {
-    
     // activatedRoute.params.subscribe((params) => {
     //   if (params.id) this.user = userService.getUserId(params.id);
     // });
   }
-  ngOnInit(): void {}
- 
+
+  ngOnInit(): void {
+    this.user = JSON.parse(this.getData('User'));
+    // console.log(item);
+  }
+
+
+  
+  getData(key: string) {
+    return localStorage.getItem(key)
+  }
+
 }
