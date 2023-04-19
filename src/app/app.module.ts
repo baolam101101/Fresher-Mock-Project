@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { LoadingInterceptor } from "./shared/interceptors/loading.interceptor";
 import { AuthInterceptor } from "./auth/auth.interceptor";
 
+import { AvatarModule } from "primeng/avatar";
 import { ButtonModule } from "primeng/button";
 import { MultiSelectModule } from "primeng/multiselect";
 import { TableModule } from "primeng/table";
