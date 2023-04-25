@@ -26,6 +26,10 @@ export class CartPageComponent implements OnInit {
     this.cartService.getCartObservable().subscribe((cart) => {
       this.cart = cart;
     });
+    const form = document.querySelector("form");
+    const quantityInput = document.querySelector('#quantity') as HTMLInputElement;
+    
+    
   }
 
   //quantity of pruduct
@@ -35,9 +39,7 @@ export class CartPageComponent implements OnInit {
   //     event.target.value = event.target.value.replace(/^([0-9])$/, "");
   //   }
   // }
- 
 
-    
   ngOnInit(): void {}
 
   removeFromCart(cartItem: CartItem) {

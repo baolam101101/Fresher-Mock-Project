@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div class="row"  *ngIf="!cart || cart.items.length > 0">
+<div class="row" *ngIf="!cart || cart.items.length > 0">
   <div class="col-9">
     <div style="width: 100%;">
       <div *ngIf="cart && cart.items.length; ">
@@ -24,12 +24,13 @@
             <div>
               <!-- <input  #quantitySelect [value]="cartItem.quantity" (change)="changeQuantity(cartItem, quantitySelect.value)"> -->
 
+            
+                <input #quantitySelect type="number"  id="quantity" name="quantity" min="1" pInputText [(ngModel)]="cartItem.quantity"
+                  (change)="changeQuantity(cartItem, quantitySelect.value)" maxlength="2"
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                  placeholder="Quantity" required>
 
-              <input #quantitySelect type="number" pInputText [(ngModel)]="cartItem.quantity"
-                (change)="changeQuantity(cartItem, quantitySelect.value)"  maxlength="2"
-                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                placeholder="Quantity" required>
-
+           
             </div>
 
             <div>
@@ -92,11 +93,11 @@
     </section>
   </div>
 </div>
- 
 
 
 
- 
+
+
 
 
 
