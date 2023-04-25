@@ -1,1 +1,118 @@
+
+<app-header></app-header>
+<div class="row" *ngIf="!cart || cart.items.length > 0">
+  <div class="col-9">
+    <div style="width: 100%;">
+      <div *ngIf="cart && cart.items.length; ">
+        <ul>
+          <li *ngFor="let cartItem of cart.items" (click)="onSelect(cartItem)">
+            <div class="cart-img">
+              <img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name">
+            </div>
+
+            <div>
+              <a routerLink="/food/{{cartItem.food.id}}">
+                {{cartItem.food.name}}
+              </a>
+            </div>
+
+            <div>
+              <a routerLink="/food/{{cartItem.food.id}}">
+                <strong> Time </strong> : {{cartItem.food.cookTime}} mins
+              </a>
+            </div>
+
+            <div>
+              <!-- <input  #quantitySelect [value]="cartItem.quantity" (change)="changeQuantity(cartItem, quantitySelect.value)"> -->
+
+            
+                <input #quantitySelect type="number"  id="quantity" name="quantity" min="1" pInputText [(ngModel)]="cartItem.quantity"
+                  (change)="changeQuantity(cartItem, quantitySelect.value)" maxlength="2"
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                  placeholder="Quantity" required>
+
+           
+            </div>
+
+            <div>
+              {{cartItem.price | currency}}
+            </div>
+
+            <div>
+              <button class="remove-button" (click)="removeFromCart(cartItem)">
+                Remove
+              </button>
+            </div>
+
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-3">
+    <section style="position: sticky;top: 20px;">
+      <section>
+        <div class="row">
+          <div class="checkout" style="width:20% ;">
+            <div>
+              <h4 style="margin-top: 0px;margin-bottom: 0px;"> Image of food </h4>
+            </div>
+            <div *ngIf="selectedFood" style="width: 100% ;">
+              <img [src]="selectedFood.imageUrl" [alt]="selectedFood.imageUrl"
+                style="border: 1px solid black; width: 100%; height: auto; box-shadow: 10px;">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="row">
+          <div>
+            <div class=" " style="width: 100%; ">
+              <a class="button-add-more" type="button" routerLink="/home" style="width: 100%;"> Add more foods </a>
+            </div>
+          </div>
+
+
+        </div>
+      </section>
+      <section>
+        <div class="row">
+          <div class=" " style="width: 100%; padding: 0px ;">
+            <div class="checkout">
+              <div>
+                <div class="foods-count">{{cart.totalCount}}</div>
+                <div class="total-price">{{cart.totalPrice|currency}}</div>
+              </div>
+              <div>
+                <a routerLink="/checkout">Proceed to Checkout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- <div class="checkout">
+  <div>
+    <div class="foods-count">{{cart.totalCount}}</div>
+    <div class="total-price">{{cart.totalPrice|currency}}</div>
+  </div>
+  <div>
+    <a routerLink="/checkout">Proceed to Checkout</a>
+  </div>
+</div> -->
+<div class="go-home" *ngIf="!cart || cart.items.length === 0">
+  <a class="button" type="button" routerLink="/home"> Go to Home </a>
+</div>
 <app-map></app-map>
