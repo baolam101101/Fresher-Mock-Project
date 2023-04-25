@@ -23,6 +23,7 @@ export class UserService {
   public get currentUser(): User {
     return this.userSubject.value;
   }
+  
 
   login(userLogin: IUserLogin): Observable<User> {
     return this.http.post<User>(environment.USER_LOGIN_URL, userLogin).pipe(
@@ -66,13 +67,13 @@ export class UserService {
   logout() {
     this.userSubject.next(new User());
     localStorage.removeItem(USER_KEY);
-    window.location.reload();
+    // window.location.reload();
   }
 
   private setUserToLocalStorage(user: User) {
     localStorage.setItem(USER_KEY, JSON.stringify(user));
   }
-
+   
   private getUserFromLocalStorage(): User {
     const userJson = localStorage.getItem(USER_KEY);
     if (userJson) return JSON.parse(userJson) as User;

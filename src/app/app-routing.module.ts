@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: "food/:id", component: DetailComponent },
   { path: "register", component: RegisterComponent },
   { path: "cart-page", component: CartPageComponent },
-  { path : "info-user" , component : UserInfoPageComponent},
+  { path : "userinfo" , component : UserInfoPageComponent},
   { path: "aboutus", component: AboutUsComponent},
   { path: 'tag/:tag', component: HomePageComponent },
 

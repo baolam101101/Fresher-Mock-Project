@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { LoadingInterceptor } from "./shared/interceptors/loading.interceptor";
 import { AuthInterceptor } from "./auth/auth.interceptor";
 
+import { AvatarModule } from "primeng/avatar";
 import { ButtonModule } from "primeng/button";
 import { MultiSelectModule } from "primeng/multiselect";
 import { TableModule } from "primeng/table";
@@ -62,6 +63,7 @@ import { UserInfoPageComponent } from './components/pages/user-info-page/user-in
 import { AboutUsComponent } from './components/pages/about-us/about-us.component';
 import { TagsComponent } from "./components/pages/tags/tags.component"; 
 import { TabMenuModule } from 'primeng/tabmenu';
+import { SearchComponent } from './components/partial-component/search/search.component';
 
 const PRIMENG_DEPENDENCIES = [
   ButtonModule,
@@ -123,6 +125,7 @@ const PRIMENG_DEPENDENCIES = [
     UserInfoPageComponent,
     AboutUsComponent,
     TagsComponent,
+    SearchComponent,
 
   ],
   imports: [

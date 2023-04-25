@@ -1,36 +1,38 @@
-import { Injectable } from '@angular/core';
-import { sample_foods, sample_tags } from 'src/data';
-import { Food } from '../shared/models/food';
-import { Tag } from '../shared/models/Tag';
+import { Injectable } from "@angular/core";
+import { sample_foods, sample_tags } from "src/data";
+import { Food } from "../shared/models/food";
+import { Tag } from "../shared/models/Tag";
+import { HttpClient } from '@angular/common/http';
+import { environment } from "src/environments/environment";
+import { Observable } from "rxjs";
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class FoodService {
+  constructor(private http: HttpClient) {}
 
-  constructor() { }
-
-  getAll(): Food[] {
-    return sample_foods;
+  searchFood (foodName: string) : Observable<Food[]> {
+    return this.http.get<Food[]>(`${environment.FOODS_BY_SEARCH_URL}/${foodName}`);
   }
 
-  getAllFoodsBySearchTerm(searchTerm: string) {
-    return this.getAll().filter(food => food.name.toLowerCase().includes(searchTerm.toLowerCase()))
+  getAll(): Observable<Food[] > {
+    return this.http.get<Food[]>(`${environment.FOODS_URL}`);
   }
 
-  getAllTags(): Tag[] {
-    return sample_tags;
+   
+
+  getAllTags(tag:string): Observable<Food[]> {
+    return this.http.get<Food[]>(`${environment. FOODS_BY_TAG_URL}/${tag}`);
   }
 
-  
-  getAllFoodsByTag(tag: string): Food[] {
-    return tag === "All" ?
-      this.getAll() :
-      this.getAll().filter(food => food.tags?.includes(tag));
-  }
+  // getAllFoodsByTag(tag: string): Food[] {
+  //   return tag === "All"
+  //     ? this.getAll()
+  //     : this.getAll().filter((food) => food.tags?.includes(tag));
+  // }
 
-
-  getFoodById(foodId:string):Food{
-    return this.getAll().find(food => food.id == foodId) ?? new Food();
-  }
-
+  // getFoodById(foodId: string): Food {
+  //   return this.getAll().find((food) => food.id == foodId) ?? new Food();
+  // }
 }
