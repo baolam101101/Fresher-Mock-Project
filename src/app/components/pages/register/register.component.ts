@@ -27,8 +27,29 @@ export class RegisterComponent implements OnInit {
       password: this.fb.control('', [Validators.required]),
       confirmPassword: this.fb.control('', [Validators.required]),
       address: this.fb.control('', [Validators.required])
-    });
+    },
+    {
+      validator: this.ConfirmedValidator('password', 'confirmPassword')
+    }
+    );
   }
 
-  submit(){}
+  ConfirmedValidator(controlName: string, matchingControlName: string){
+    return (formGroup: FormGroup) => {
+        const control = formGroup.controls[controlName];
+        const matchingControl = formGroup.controls[matchingControlName];
+        if (matchingControl.errors && !matchingControl.errors.confirmedValidator) {
+            return;
+        }
+        if (control.value !== matchingControl.value) {
+            matchingControl.setErrors({ confirmedValidator: true });
+        } else {
+            matchingControl.setErrors(null);
+        }
+    }
+}
+
+  submit(){
+    console.log(this.registerForm.value);
+  }
 }
