@@ -51,14 +51,14 @@ export class LoginPageComponent implements OnInit {
         // this.userService.storeToken(res.result.token);
         // this.userService.storeIdUser(res.result.user.id);
       },
-  //     complete: () => {
-  //       this.messageService.add({
-  //         key: 'success',
-  //         severity: 'success',
-  //         summary: 'Successful',
-  //         detail: 'Login Successful',
-  //         life: 2000,
-  //       });
+      // complete: () => {
+      //   this.messageService.add({
+      //     key: 'success',
+      //     severity: 'success',
+      //     summary: 'Successful',
+      //     detail: 'Login Successful',
+      //     life: 2000,
+      //   });
   //       const event = {
   //         name: 'logout',
   //         isLogout: false,
