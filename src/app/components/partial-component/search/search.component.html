@@ -1,0 +1,17 @@
+<!-- <div>
+    <input [(ngModel)]="searchTerm" placeholder="Enter food name" />
+    <button (click)="search()">Search</button>
+</div>
+
+<div *ngIf="searchResults">
+    <ul>
+        <li *ngFor="let result of searchResults">
+            <h3>{{ result.name }}</h3>
+            <p>{{ result.description }}</p>
+        </li>
+    </ul>
+</div> -->
+
+<div class="pi pi-search custom justify-content-start">
+    <input class="search-control" (keyup)="keyFunc($event)" (keyup.enter)="onEnter($event)" type="text" placeholder="Search" #searchbar />
+</div>

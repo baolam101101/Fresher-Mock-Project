@@ -1,9 +1,13 @@
 <app-header></app-header>
 <div class="head">
-  <div class="pi pi-search custom justify-content-start">
+  <!-- <div class="pi pi-search custom justify-content-start">
     <input class="search-control" type="text" placeholder="Search" [(ngModel)]="searchText" #searchbar />
     
+  </div> -->
+  <div>
+    <app-search (newItemEvent)="searchFoodByName($event)"></app-search>
   </div>
+
   <app-tags></app-tags>
 
 
@@ -27,7 +31,8 @@
     </div> -->
 
     <ul>
-      <li *ngFor="let food of foods">
+      <!-- <li *ngFor="let food of foods"> -->
+      <li *ngFor="let food of foods | async">
         <a routerLink="/food/{{food.id}}">
           <img [src]="food.imageUrl" [alt]="food.name" />
           <div class="content">
@@ -60,7 +65,8 @@
             </div>
           </div>
         </a>
-        <button type="button" class="addtocart" (click)="addToCart(food)"> <strong> <i class="pi pi-cart-plus" style="font-size: 1.5rem" ></i> </strong></button>
+        <button type="button" class="addtocart" (click)="addToCart(food)"> <strong> <i class="pi pi-cart-plus"
+              style="font-size: 1.5rem"></i> </strong></button>
     </ul>
   </div>
 </div>
