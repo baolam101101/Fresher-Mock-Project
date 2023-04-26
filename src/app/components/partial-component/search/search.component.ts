@@ -18,11 +18,11 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
     
   }
-  onEnter(event){
+  onEnter(event:any){
     this.newItemEvent.emit(event.target.value);
   }
   
-  keyFunc(event){
+  keyFunc(event:any){
     if(event.target.value == ''){
       this.newItemEvent.emit(event.target.value);
     }
