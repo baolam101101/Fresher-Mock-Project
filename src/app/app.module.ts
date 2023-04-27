@@ -68,6 +68,7 @@ import { AboutUsComponent } from './components/pages/about-us/about-us.component
 import { TagsComponent } from "./components/pages/tags/tags.component"; 
 import { TabMenuModule } from 'primeng/tabmenu';
 import { SearchComponent } from './components/partial-component/search/search.component';
+import { CheckoutComponent } from './components/pages/checkout/checkout.component';
 
 const PRIMENG_DEPENDENCIES = [
   ButtonModule,
@@ -133,6 +134,7 @@ const PRIMENG_DEPENDENCIES = [
     AboutUsComponent,
     TagsComponent,
     SearchComponent,
+    CheckoutComponent,
 
   ],
   imports: [

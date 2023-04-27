@@ -87,7 +87,7 @@
     justify-content: space-between;
     align-items: center;
     flex: 1 3;
-    height: 20rem;
+    height: auto;
     border: 3px solid #3240ff;
     border-radius: 1rem;
     padding: 0.5rem;
@@ -167,4 +167,8 @@
   }
   a{
     text-decoration: none;
+  }
+
+  .thiscusor {
+    cursor: pointer;
   }

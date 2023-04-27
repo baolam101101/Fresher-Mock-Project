@@ -9,6 +9,8 @@ import { UserInfoPageComponent } from "./components/pages/user-info-page/user-in
 
 import { AboutUsComponent } from "./components/pages/about-us/about-us.component";
 import { OrderComponent } from "./components/pages/order/order.component";
+import { CheckoutComponent } from "./components/pages/checkout/checkout.component";
+
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "login" },
   { path: "home", component: HomePageComponent }, 
@@ -19,7 +21,8 @@ const routes: Routes = [
   { path : "userinfo" , component : UserInfoPageComponent},
   { path: "aboutus", component: AboutUsComponent},
   { path: 'tag/:tag', component: HomePageComponent },
-  {path: "order", component:OrderComponent}
+  { path: "order", component: OrderComponent},
+  { path: "checkout", component: CheckoutComponent}
 
 ];
 
