@@ -41,7 +41,7 @@ export class HomePageComponent implements OnInit {
     this.foods = this.foodService.getAll();
   }
 
-  searchFoodByName(searchFood) {
+  searchFoodByName(searchFood:any) {
     if (searchFood) {
       this.foods = this.foodService.searchFood(searchFood);
     } else {

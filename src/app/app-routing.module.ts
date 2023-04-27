@@ -6,10 +6,14 @@ import { CartPageComponent } from "./components/pages/cart-page/cart-page.compon
 import { HomePageComponent } from "./components/pages/home-page/home-page.component";
 import { DetailComponent } from "./components/pages/detail/detail.component";
 import { UserInfoPageComponent } from "./components/pages/user-info-page/user-info-page.component";
+
 import { AboutUsComponent } from "./components/pages/about-us/about-us.component";
+import { OrderComponent } from "./components/pages/order/order.component";
+import { CheckoutComponent } from "./components/pages/checkout/checkout.component";
+
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "login" },
-  { path: "home", component: HomePageComponent },
+  { path: "home", component: HomePageComponent }, 
   { path: "login", component: LoginPageComponent },
   { path: "food/:id", component: DetailComponent },
   { path: "register", component: RegisterComponent },
@@ -17,6 +21,8 @@ const routes: Routes = [
   { path : "userinfo" , component : UserInfoPageComponent},
   { path: "aboutus", component: AboutUsComponent},
   { path: 'tag/:tag', component: HomePageComponent },
+  { path: "order", component: OrderComponent},
+  { path: "checkout", component: CheckoutComponent}
 
 ];
 

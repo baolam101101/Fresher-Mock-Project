@@ -1,24 +1,28 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
-import { Dropdown } from "primeng/dropdown";
 import { CartService } from "src/app/services/cart.service";
 import { Cart } from "src/app/shared/models/Cart";
 import { CartItem } from "src/app/shared/models/CartItem";
 import { Food } from "src/app/shared/models/Food";
 import { sample_foods } from "src/data";
 import { Router } from "@angular/router";
-import { NO_ERRORS_SCHEMA } from "@angular/compiler";
+import { UserService } from 'src/app/services/user.service';
+import { MapComponent } from '../map/map.component';
 
 @Component({
-  selector: "app-cart-page",
-  templateUrl: "./cart-page.component.html",
-  styleUrls: ["./cart-page.component.css"],
+  selector: 'app-order',
+  templateUrl: './order.component.html',
+  styleUrls: ['./order.component.css']
 })
-export class CartPageComponent implements OnInit {
+export class OrderComponent implements OnInit {
+  // order:Order = new Order();
+  // checkoutForm!: FormGroup;
   cart!: Cart;
-  // options: Dropdown[];
+  username: String;
+  address: String;
 
   constructor(
+    private userService: UserService,
     private cartService: CartService,
     activatedRoute: ActivatedRoute,
     private router: Router
@@ -32,15 +36,34 @@ export class CartPageComponent implements OnInit {
     
   }
 
-  //quantity of pruduct
-  // public inputValidator(event: any) {
-  //   const pattern = /^([0-9])$/;
-  //   if (!pattern.test(event.target.value)) {
-  //     event.target.value = event.target.value.replace(/^([0-9])$/, "");
-  //   }
+
+  ngOnInit(): void { 
+    this.username = this.userService.currentUser.name;
+    this.address = this.userService.currentUser.address;
+  }
+  //   let {name, address} = this.userService.currentUser;
+  //   this.checkoutForm = this.formBuilder.group({
+  //     name:[name, Validators.required],
+  //     address:[address, Validators.required]
+  //   });
   // }
 
-  ngOnInit(): void {}
+  // get fc(){
+  //   return this.checkoutForm.controls;
+  // }
+
+  // createOrder(){
+  //   if(this.checkoutForm.invalid){
+  //     this.toastrService.warning('Please fill the inputs', 'Invalid Inputs');
+  //     return;
+  //   }
+
+  //   this.order.name = this.fc.name.value;
+  //   this.order.address = this.fc.address.value;
+
+  //   console.log(this.order);
+  // }
+
 
   removeFromCart(cartItem: CartItem) {
     this.cartService.removeFromCart(cartItem.food.id);
@@ -65,13 +88,6 @@ export class CartPageComponent implements OnInit {
   func() {
     console.log("s");
   }
-
-  // foods = sample_foods;
-  // selectedFood?: Food;
-
-  // onSelect(food: Food): void {
-  //   this.selectedFood = food;
-  // }
 
   foods = sample_foods;
   selectedFood?: Food;

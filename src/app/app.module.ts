@@ -60,11 +60,16 @@ import { CartPageComponent } from "./components/pages/cart-page/cart-page.compon
 import { DetailComponent } from "./components/pages/detail/detail.component";
 import { FooterComponent } from './components/pages/footer/footer.component';
 import { UserInfoPageComponent } from './components/pages/user-info-page/user-info-page.component';
+import { MapComponent } from './components/pages/map/map.component';
+import { OrderComponent } from './components/pages/order/order.component';
+
+
 import { AboutUsComponent } from './components/pages/about-us/about-us.component';
 import { TagsComponent } from "./components/pages/tags/tags.component"; 
 import { TabMenuModule } from 'primeng/tabmenu';
 import { SearchComponent } from './components/partial-component/search/search.component';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { CheckoutComponent } from './components/pages/checkout/checkout.component';
 
 const PRIMENG_DEPENDENCIES = [
   ButtonModule,
@@ -111,7 +116,9 @@ const PRIMENG_DEPENDENCIES = [
   FileUploadModule,
   SelectButtonModule,
   FormsModule,
-  TabMenuModule,ProgressSpinnerModule
+  TabMenuModule,
+  ProgressSpinnerModule,
+  AvatarModule
 ];
 @NgModule({
   declarations: [
@@ -125,9 +132,12 @@ const PRIMENG_DEPENDENCIES = [
     DetailComponent,
     FooterComponent,
     UserInfoPageComponent,
+    MapComponent,
+    OrderComponent,
     AboutUsComponent,
     TagsComponent,
     SearchComponent,
+    CheckoutComponent,
 
   ],
   imports: [
@@ -143,6 +153,7 @@ const PRIMENG_DEPENDENCIES = [
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+    
   ],
   bootstrap: [AppComponent],
 })
