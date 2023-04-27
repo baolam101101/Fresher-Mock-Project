@@ -14,9 +14,10 @@ import { Observable } from "rxjs";
 export class DetailComponent implements OnInit {
   foods: Observable<Food[]>;
   food!: Food;
+
   constructor(
-    activatedRoute: ActivatedRoute,
-    foodService: FoodService,
+    private activatedRoute: ActivatedRoute,
+    private foodService: FoodService,
     private cartService: CartService,
     private router: Router,
     private http: HttpClient
@@ -24,9 +25,19 @@ export class DetailComponent implements OnInit {
     // activatedRoute.params.subscribe((params) => {
     //   if (params.id) this.food = foodService.getFoodById(params.id);
     // });
+    activatedRoute.params.subscribe((params) => {
+      if (params.id) {
+        this.foodService.getFoodById(params.id).subscribe((food) => {
+          this.food = food;
+        });
+      }
+    });
+    
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+   
+  }
 
   addToCart() {
     this.cartService.addToCart(this.food);

@@ -7,6 +7,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import { Injectable } from "@angular/core";
 import { Tag } from "src/app/shared/models/Tag";
+import { environment } from "src/environments/environment";
 
 @Component({
   selector: "app-home-page",
@@ -45,6 +46,15 @@ export class HomePageComponent implements OnInit {
       this.foods = this.foodService.searchFood(searchFood);
     } else {
       this.foods = this.foodService.getAll();
+    }
+  }
+
+  getAllFoodsByTag(tagName: string): Observable<Food[]> {
+    if (tagName === "All") {
+      // return this.getAll();
+      return this.http.get<Food[]>(`${environment.FOODS_URL}`);
+    } else {
+      return this.http.get<Food[]>(`${environment.FOODS_TAGS_URL}/${tagName}`);
     }
   }
 

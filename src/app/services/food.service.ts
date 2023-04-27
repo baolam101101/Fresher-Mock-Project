@@ -33,13 +33,14 @@ export class FoodService implements OnInit {
 
   getAllFoodsByTag(tagName: string): Observable<Food[]> {
     if (tagName === "All") {
-      return this.getAll();
+      // return this.getAll();
+      return this.http.get<Food[]>(`${environment.FOODS_URL}`);
     } else {
       return this.http.get<Food[]>(`${environment.FOODS_TAGS_URL}/${tagName}`);
     }
   }
 
-  // getFoodById(foodId: string): Food {
-  //   return this.getAll().find((food) => food.id == foodId) ?? new Food();
-  // }
+  getFoodById(food_Id: string) {
+    return this.http.get<Food>(`${environment.FOOD_BY_ID_URL}${food_Id}`);
+  }
 }

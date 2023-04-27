@@ -1,6 +1,6 @@
-<!-- <p-toast key="error"></p-toast>
+ <!-- <p-toast key="error"></p-toast>
 <p-toast key="process"></p-toast>
-<p-toast key="success"></p-toast> -->
+<p-toast key="success"></p-toast>  -->
 <!-- For Form register -->
 <div class="register-container">
     <!-- For register Heading -->
@@ -14,7 +14,7 @@
         (ngSubmit)="submit()"
       >
         <div class="p-grid p-fluid register-userdata">
-          <div class="p-col-12 p-md-4">
+          <div class="p-col-12 p-md-1">
             <span class="p-float-label">
               <input
                 id="float-input"
@@ -25,7 +25,7 @@
               <label for="float-input">Name</label>
             </span>
           </div>
-          <div class="p-col-12 p-md-4">
+          <div class="p-col-12 p-md-1">
             <span class="p-float-label">
               <input id="email" type="email" pInputText formControlName="email" />
               <label for="float-input">Enter Email</label>
@@ -44,7 +44,7 @@
             </div>
           </div>
   
-          <div class="p-col-12 p-md-4">
+          <div class="p-col-12 p-md-1">
             <span class="p-float-label">
               <input
                 id="float-input"
@@ -64,7 +64,7 @@
                 </div>
               </div> -->
           </div>
-          <div class="p-col-12 p-md-4">
+          <div class="p-col-12 p-md-1">
             <span class="p-float-label">
               <input
                 id="float-input"
@@ -75,7 +75,7 @@
               <label for="float-input">Confirm Password</label>
             </span>
           </div>
-          <div class="p-col-12 p-md-4">
+          <div class="p-col-12 p-md-1">
             <span class="p-float-label">
               <input
                 id="float-input"
@@ -88,9 +88,9 @@
           </div>
         </div>
   
-        <div class="p-col-12 p-md-4 register-forgot-password">
-          <a routerLink="/login"> <strong> Login here </strong> </a>
+        <div class="p-col-12 p-md-1 register-forgot-password ">
           <p-button label="Sign up" type="submit"></p-button>
+          <a routerLink="/login" style="padding-top: 10px;  height: 20px; align-items: center; display: flex; text-align: center;"> <strong> Login here </strong> </a>
         </div>
   
         <div class="p-col-12"></div>

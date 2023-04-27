@@ -64,6 +64,7 @@ import { AboutUsComponent } from './components/pages/about-us/about-us.component
 import { TagsComponent } from "./components/pages/tags/tags.component"; 
 import { TabMenuModule } from 'primeng/tabmenu';
 import { SearchComponent } from './components/partial-component/search/search.component';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 const PRIMENG_DEPENDENCIES = [
   ButtonModule,
@@ -85,6 +86,7 @@ const PRIMENG_DEPENDENCIES = [
   MessagesModule,
   MessageModule,
   AutoCompleteModule,
+  
   TooltipModule,
   FieldsetModule,
   SliderModule,
@@ -109,7 +111,7 @@ const PRIMENG_DEPENDENCIES = [
   FileUploadModule,
   SelectButtonModule,
   FormsModule,
-  TabMenuModule
+  TabMenuModule,ProgressSpinnerModule
 ];
 @NgModule({
   declarations: [
