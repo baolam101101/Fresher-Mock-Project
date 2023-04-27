@@ -6,6 +6,7 @@ import { CartService } from "src/app/services/cart.service";
 import { HttpClient } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import { Injectable } from "@angular/core";
+import { Tag } from "src/app/shared/models/Tag";
 
 @Component({
   selector: "app-home-page",
@@ -34,6 +35,7 @@ export class HomePageComponent implements OnInit {
     //   else this.foods = foodService.getAll();
     // });
   }
+
   ngOnInit(): void {
     this.foods = this.foodService.getAll();
   }
@@ -47,8 +49,8 @@ export class HomePageComponent implements OnInit {
   }
 
   addToCart(food) {
-    // console.log(food);
     this.cartService.addToCart(food);
+    // console.log(food);
     // this.router.navigateByUrl("/cart-page");
   }
 

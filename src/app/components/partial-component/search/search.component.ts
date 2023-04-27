@@ -9,24 +9,19 @@ import { Food } from "src/app/shared/models/Food";
   styleUrls: ["./search.component.css"],
 })
 export class SearchComponent implements OnInit {
-
-
   @Output() newItemEvent = new EventEmitter<string>();
-  
+
   constructor(private foodService: FoodService) {}
 
-  ngOnInit(): void {
-    
-  }
-  onEnter(event){
+  ngOnInit(): void {}
+  
+  onEnter(event) {
     this.newItemEvent.emit(event.target.value);
   }
-  
-  keyFunc(event){
-    if(event.target.value == ''){
+
+  keyFunc(event) {
+    if (event.target.value == "") {
       this.newItemEvent.emit(event.target.value);
     }
   }
-  
- 
 }

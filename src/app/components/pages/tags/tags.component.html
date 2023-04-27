@@ -1,7 +1,11 @@
 
-
-<div *ngIf="tags">
-  <a *ngFor="let tag of tags" routerLink="/tag/{{tag.name}}">
+<div *ngIf="(tags | async) as tagList">
+  <a *ngFor="let tag of tagList" routerLink="/tag/{{tag.name}}">
     {{tag.name}} 
   </a>
 </div>
+<!-- <div *ngIf="tags">
+  <a *ngFor="let tag of tags | async" routerLink="/tag/{{tag.name}}">
+    {{tag.name}} 
+  </a>
+</div> -->
