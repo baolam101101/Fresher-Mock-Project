@@ -6,6 +6,7 @@ import { CartItem } from "src/app/shared/models/CartItem";
 import { Food } from "src/app/shared/models/Food";
 import { sample_foods } from "src/data";
 import { Router } from "@angular/router";
+import { User } from 'src/app/shared/models/User';
 
 @Component({
   selector: 'app-order',
@@ -13,16 +14,17 @@ import { Router } from "@angular/router";
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
+  order!: Order = new Order();
+  checkoutForm!: FormGroup;
   cart!: Cart;
-  // options: Dropdown[];
 
   constructor(
     private cartService: CartService,
     activatedRoute: ActivatedRoute,
     private router: Router
   ) {
-    this.cartService.getCartObservable().subscribe((cart) => {
-      this.cart = cart;
+    this.cartService.getCartObservable().subscribe((order) => {
+      this.order = order;
     });
     const form = document.querySelector("form");
     const quantityInput = document.querySelector('#quantity') as HTMLInputElement;
@@ -31,7 +33,31 @@ export class OrderComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {}
+  ngOnInit(): void { 
+    let {name, address} = this.userService.currentUser;
+    this.checkoutForm = this.formBuilder.group({
+      name:[name, Validators.required],
+      address:[address, Validators.required]
+    });
+  }
+
+  get fc(){
+    return this.checkoutForm.controls;
+  }
+
+  createOrder(){
+    if(this.checkoutForm.invalid){
+      this.toastrService.warning('Please fill the inputs', 'Invalid Inputs');
+      return;
+    }
+
+    this.order.name = this.fc.name.value;
+    this.order.address = this.fc.address.value;
+
+    console.log(this.order);
+  }
+
+  
 
   removeFromCart(cartItem: CartItem) {
     this.cartService.removeFromCart(cartItem.food.id);

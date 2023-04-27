@@ -16,11 +16,7 @@
               </a>
             </div>
 
-            <div>
-              <a routerLink="/food/{{cartItem.food.id}}">
-                <strong> Time </strong> : {{cartItem.food.cookTime}} mins
-              </a>
-            </div>
+            
 
             <div>
               <!-- <input  #quantitySelect [value]="cartItem.quantity" (change)="changeQuantity(cartItem, quantitySelect.value)"> -->
@@ -61,6 +57,8 @@
               <div>
                 <div class="foods-count">{{cart.totalCount}}</div>
                 <div class="total-price">{{cart.totalPrice|currency}}</div>
+                <text-input [control]="fc.name" label="Name"></text-input>
+                <text-input [control]="fc.address" label="Address"></text-input>
               </div>
               <div>
                 <a routerLink="/checkout">Confirm Order</a>
@@ -70,17 +68,10 @@
         </div>
       </section>
 
-      <section>
-        <div class="row">
-          <div>
-            <div class=" " style="width: 100%; ">
-              <a class="button-add-more" type="button" routerLink="/home" style="width: 100%;"> Add more foods </a>
-            </div>
-          </div>
-
-
-        </div>
-      </section>
+      
+    <!--<div class="app-map">
+      <app-map></app-map>
+    </div> -->
     </section>
   </div>
 </div>
@@ -105,4 +96,3 @@
 <div class="go-home" *ngIf="!cart || cart.items.length === 0">
   <a class="button" type="button" routerLink="/home"> Go to Home </a>
 </div>
-<app-map></app-map>
