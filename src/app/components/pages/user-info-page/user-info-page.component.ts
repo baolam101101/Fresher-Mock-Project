@@ -9,8 +9,9 @@ import { HttpClient } from "@angular/common/http";
   templateUrl: "./user-info-page.component.html",
   styleUrls: ["./user-info-page.component.css"],
 })
+
 export class UserInfoPageComponent  implements OnInit {
-  user!: User;
+  user: User;
   constructor(
     private userService: UserService,
     private activatedRoute: ActivatedRoute,
@@ -23,7 +24,9 @@ export class UserInfoPageComponent  implements OnInit {
   }
 
   ngOnInit(): void {
-    this.user = JSON.parse(JSON.stringify(this.getData('User')));
+    // this.user = JSON.parse(JSON.stringify(this.getData('User')));
+    this.user = JSON.parse(this.getData('User'));
+
     // console.log(item);
   }
   getData(key: string) {
