@@ -7,7 +7,7 @@ import { Food } from "src/app/shared/models/Food";
 import { sample_foods } from "src/data";
 import { Router } from "@angular/router";
 import { UserService } from 'src/app/services/user.service';
-import { MapComponent } from '../map/map.component';
+// import { MapComponent } from '../map/map.component';
 
 @Component({
   selector: 'app-order',
