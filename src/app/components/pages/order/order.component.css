@@ -110,17 +110,17 @@
   
   .foods-count::before {
     content: "Count: ";
-    color: grey;
+    color: rgb(14, 14, 14);
   }
   
   .total-price::before {
     content: "Price: ";
-    color: grey;
+    color: rgb(0, 0, 0);
   }
   
   .checkout a {
     padding: 1rem;
-    color: white;
+    color: rgb(3, 3, 3);
     background: #4375ff;
     display: block;
     width: 99%;

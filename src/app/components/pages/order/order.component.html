@@ -5,15 +5,9 @@
       <div style="width: 100%">
         <div *ngIf="cart && cart.items.length">
           <ul>
-            <li
-              *ngFor="let cartItem of cart.items"
-              (click)="onSelect(cartItem)"
-            >
+            <li *ngFor="let cartItem of cart.items" (click)="onSelect(cartItem)">
               <div class="cart-img">
-                <img
-                  [src]="cartItem.food.imageUrl"
-                  [alt]="cartItem.food.name"
-                />
+                <img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name" />
               </div>
 
               <div>
@@ -25,34 +19,25 @@
               <div>
                 <!-- <input  #quantitySelect [value]="cartItem.quantity" (change)="changeQuantity(cartItem, quantitySelect.value)"> -->
 
-                <input
-                  #quantitySelect
-                  type="number"
-                  id="quantity"
-                  name="quantity"
-                  min="1"
-                  pInputText
-                  [(ngModel)]="cartItem.quantity"
-                  (change)="changeQuantity(cartItem, quantitySelect.value)"
+                <input #quantitySelect type="number" id="quantity" name="quantity" min="1" pInputText
+                  [(ngModel)]="cartItem.quantity" (change)="changeQuantity(cartItem, quantitySelect.value)"
                   maxlength="2"
                   oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                  placeholder="Quantity"
-                  required
-                />
+                  placeholder="Quantity" required />
               </div>
 
               <div>
                 {{ cartItem.price | currency }}
               </div>
 
-              <div>
+              <!-- <div>
                 <button
                   class="remove-button"
                   (click)="removeFromCart(cartItem)"
                 >
                   Remove
                 </button>
-              </div>
+              </div> -->
             </li>
           </ul>
         </div>
@@ -65,34 +50,23 @@
             <div class=" " style="width: 100%; padding: 0px">
               <div class="checkout">
                 <div class="user-info p-5">
-                  <div class="foods-count">{{ cart.totalCount }}</div>
+                  <div class="foods-count"> {{ cart.totalCount }}</div>
                   <div class="total-price">
                     {{ cart.totalPrice | currency }}
                   </div>
-                  <div class="customer-name">User Name: {{ username }}</div>
-                  <div class="user-address">Address: {{ address }}</div>
+                  <div class="customer-name"> <strong>User Name: </strong> {{ username }}</div>
+                  <div class="user-address"> <strong>Address: </strong> {{ address }}</div>
                   <br />
                   <h5>Note:</h5>
                   <span class="p-float-label">
-                    <textarea
-                      id="float-input"
-                      rows="5"
-                      cols="30"
-                      pInputTextarea
-                    ></textarea>
+                    <textarea id="float-input" rows="5" cols="30" pInputTextarea></textarea>
                     <label for="float-input">Please note here</label>
                   </span>
 
                   <br />
                   <div class="btn-confirm justify-content-center">
-                    <button
-                      pButton
-                      pRipple
-                      type="button"
-                      label="Confirm Order"
-                      class="thiscusor"
-                      routerLink="/checkout"
-                    ></button>
+                    <button pButton pRipple type="button" label="Confirm Order" class="thiscusor"
+                      routerLink="/checkout"></button>
                   </div>
                 </div>
               </div>
