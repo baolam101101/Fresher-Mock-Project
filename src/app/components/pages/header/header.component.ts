@@ -37,7 +37,7 @@ export class HeaderComponent {
   }
 
   selectOption(value: any) {
-    console.log(value);
+    // console.log(value);
     if (value === 0) {
       this.onLogout();
     } else if (value === 1) {

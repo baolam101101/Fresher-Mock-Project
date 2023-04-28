@@ -24,11 +24,8 @@ export class UserInfoPageComponent  implements OnInit {
 
   ngOnInit(): void {
     this.user = JSON.parse(JSON.stringify(this.getData('User')));
-    // console.log(item);
+    //  console.log(item);
   }
-
-
-  
   getData(key: string) {
     return localStorage.getItem(key)
   }
